@@ -1,0 +1,40 @@
+!-----URxvt Settings------
+
+URxvt.font: 		xft:Fira Mono:pixelsize=16
+URxvt.scrollBar: 	false
+URxvt.urlLauncher: 	firefox
+URxvt.cursorBlink: 	true
+URxvt.geometry:		90x23
+URxvt.letterSpace:	-1
+
+!-----Colours-----
+! special
+*.foreground:   #aaaaaa
+*.background:   #1e1f29
+*.cursorColor:  #aaaaaa
+! black
+*.color0:       #1e1f29
+*.color8:       #555753
+! red
+*.color1:       #ff512f
+*.color9:       #ff512f
+! green
+*.color2:       #b2ffa9
+*.color10:      #b2ffa9
+! yellow
+*.color3:       #fffd82
+*.color11:      #fffd82
+! blue
+*.color4:       #3185fc
+*.color12:      #3185fc
+! magenta
+*.color5:       #dd2476
+*.color13:      #dd2476
+! cyan
+*.color6:       #66d7d1
+*.color14:      #66d7d1
+! white
+*.color7:       #f2efea
+*.color15:      #f2efea
+
+
