@@ -16,13 +16,13 @@
 
 echo -n "Welcome to the dofiles install script. Please make sure that this script is not being run as root. Continue? (y/N) ==> "; read answer
 if [[ $answer = "N" ]] ; then
-  echo "Please run this script as a normal user" && exit
+  echo "Please run this script as a normal user!" && exit
 else
   echo -n "Has the git repo been cloned in '~/Repos'? (y/N) ==> "; read answer2
   if [[ $answer2 = "N" ]] ; then
-    echo "Please move the folder to its correct directory" && exit
+    echo "Please move the folder to its correct directory!" && exit
   else
-    echo "All conditions have been met, the script will now replace dotfiles"
+    echo "All conditions have been met, the script will begin replacing dotfiles in 5 seconds." && sleep 5
   fi
 fi
 
@@ -63,3 +63,10 @@ ln -sf $dotfiles_dir/.scripts/weather ~/.scripts/
 #===================================
 # Ask to run Package Install Script
 #===================================
+
+echo -n "The script was successful, congratulations! Would you like to run the Package Install Script? (y/N)==>"; read answer3
+if [[ $answer3 = "N" ]] ; then
+  echo "Goodbye." && exit
+else
+  bash PInstallScript.sh
+fi
