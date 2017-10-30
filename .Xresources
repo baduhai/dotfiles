@@ -8,33 +8,32 @@ URxvt.geometry:		106x25
 URxvt.letterSpace:	-1
 
 !-----Colours-----
-
 ! special
-*.foreground:   #c5c8c6
-*.background:   #1e1f29
-*.cursorColor:  #c5c8c6
+*.foreground:   #353434
+*.background:   #d6d6d6
+*.cursorColor:  #353434
 ! black
-*.color0:       #282a2e
-*.color8:       #373b41
+*.color0:       #1e1f29
+*.color8:       #555753
 ! red
-*.color1:       #a54242
-*.color9:       #cc6666
+*.color1:       #ff512f
+*.color9:       #ff512f
 ! green
-*.color2:       #8c9440
-*.color10:      #b5bd68
+*.color2:       #5f9858
+*.color10:      #5f9858
 ! yellow
-*.color3:       #de935f
-*.color11:      #f0c674
+*.color3:       #eeff00
+*.color11:      #eeff00
 ! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
+*.color4:       #3185fc
+*.color12:      #3185fc
 ! magenta
-*.color5:       #85678f
-*.color13:      #b294bb
+*.color5:       #dd2476
+*.color13:      #dd2476
 ! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
+*.color6:       #30aba4
+*.color14:      #30aba4
 ! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+*.color7:       #a4a4a4
+*.color15:      #a4a4a4
 

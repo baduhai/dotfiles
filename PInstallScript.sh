@@ -20,21 +20,35 @@ if [[ $danswer = 1 ]] ; then
   sudo pacman -Syu
   echo -n -e "Please choose your environment: \n [Wayland/Xorg]Gnome(1) \n [Xorg]OpenBox(2) \n [Wayland]Sway(3) \n [Wayland]Way Cooler(4) \n [Wayland/Xorg]KDE(5) \n [Xorg]Budgie(6) \n==>" read eanswer
   if [[ $eanswer = 1 ]] ; then
-    sudo pacman -S gnome gnome-extras gnome-tweak-tool
+    sudo pacman -S gnome gnome-extras gnome-tweak-tool jshon
+    curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
+    bash ./apacman -S apacman
+    rm -rf apacman
   if [[ $eanswer = 2 ]] ; then
-    sudo pacman -S openbox tint2 menumaker lxappearance feh
+    sudo pacman -S openbox tint2 menumaker lxappearance feh jshon
+    curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
+    bash ./apacman -S apacman
+    rm -rf apacman
   if [[ $eanswer = 3 ]] ; then
-    sudo pacman -S sway
+    sudo pacman -S sway jshon
+    curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
+    bash ./apacman -S apacman
+    rm -rf apacman
   if [[ $eanswer = 4 ]] ; then
-    git clone ""
-    cd ~/
-    make
-    sudo make install
-    apacman -S way-cooler
+    curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
+    bash ./apacman -S apacman
+    rm -rf apacman
+    apacman -S way-cooler way-cooler-bg
   if [[ $eanswer = 5 ]] ; then
     sudo pacman -S plasma-desktop latte-dock plasma-wayland-session
+    curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
+    bash ./apacman -S apacman
+    rm -rf apacman
   if [[ $eanswer = 6 ]] ; then
     sudo pacman -S budgie-desktop
+    curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
+    bash ./apacman -S apacman
+    rm -rf apacman
   fi
 if [[ $danswer = 2 ]] ; then
   repos upate command for OpenSUSE

@@ -9,9 +9,9 @@ URxvt.letterSpace:	-1
 
 !-----Colours-----
 ! special
-*.foreground:   #aaaaaa
-*.background:   #1e1f29
-*.cursorColor:  #aaaaaa
+*.foreground:   #353434
+*.background:   #d6d6d6
+*.cursorColor:  #353434
 ! black
 *.color0:       #1e1f29
 *.color8:       #555753
@@ -19,11 +19,11 @@ URxvt.letterSpace:	-1
 *.color1:       #ff512f
 *.color9:       #ff512f
 ! green
-*.color2:       #b2ffa9
-*.color10:      #b2ffa9
+*.color2:       #5f9858
+*.color10:      #5f9858
 ! yellow
-*.color3:       #fffd82
-*.color11:      #fffd82
+*.color3:       #eeff00
+*.color11:      #eeff00
 ! blue
 *.color4:       #3185fc
 *.color12:      #3185fc
@@ -31,10 +31,9 @@ URxvt.letterSpace:	-1
 *.color5:       #dd2476
 *.color13:      #dd2476
 ! cyan
-*.color6:       #66d7d1
-*.color14:      #66d7d1
+*.color6:       #30aba4
+*.color14:      #30aba4
 ! white
-*.color7:       #f2efea
-*.color15:      #f2efea
-
+*.color7:       #a4a4a4
+*.color15:      #a4a4a4
 
