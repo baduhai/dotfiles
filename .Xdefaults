@@ -4,13 +4,13 @@ URxvt.font: 		xft:Fira Mono:pixelsize=16
 URxvt.scrollBar: 	false
 URxvt.urlLauncher: 	firefox
 URxvt.cursorBlink: 	true
-URxvt.geometry:		106x25
+URxvt.geometry:		80x20
 URxvt.letterSpace:	-1
 
 !-----Colours-----
 ! special
 *.foreground:   #353434
-*.background:   #d6d6d6
+*.background:   #ffffff
 *.cursorColor:  #353434
 ! black
 *.color0:       #1e1f29
