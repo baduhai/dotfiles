@@ -68,8 +68,7 @@ if [[ $danswer = 2 ]] ; then
     Budgie
   fi
 if [[ $danswer = 3 ]] ; then
-  repos upate command for Solus
-  repos upgrade command for Solus
+  sudo eopkg up -y
   echo -n -e "Please choose your environment: \n [Wayland/Xorg]Gnome(1) \n [Xorg]OpenBox(2) \n [Wayland]Sway(3) \n [Wayland]Way Cooler(4) \n [Xorg]KDE(5) \n [Xorg]Budgie(6) \n==>" read eanswer3
   if [[ $eanswer3 = 1 ]] ; then
     sudo eopkg install -y gnome-shell
