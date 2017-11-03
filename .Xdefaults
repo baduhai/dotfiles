@@ -9,9 +9,9 @@ URxvt.letterSpace:	-1
 
 !-----Colours-----
 ! special
-*.foreground:   #353434
-*.background:   #ffffff
-*.cursorColor:  #353434
+*.foreground:   #bebebe
+*.background:   #373737
+*.cursorColor:  #bebebe
 ! black
 *.color0:       #1e1f29
 *.color8:       #555753
