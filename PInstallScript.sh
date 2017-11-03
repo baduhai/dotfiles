@@ -94,8 +94,8 @@ if [[ $danswer = 3 ]] ; then
   if [[ $eanswer3 = 4 ]] ; then
     curl https://way-cooler.github.io/way-cooler-release-i3-default.sh -sSLf | bash -s  way-cooler-bg  wc-grab  wc-lock
   if [[ $eanswer3 = 5 ]] ; then
-  fi
     sudo eopkg install -y plasma-desktop
+  fi
   if [[ $eanswer3 = 6 ]] ; then
     echo -n -e "Are you sure Budgie is not already installed? (y/N) \n==>" read banswer
     if [[ $banswer = "y" ]]; then
