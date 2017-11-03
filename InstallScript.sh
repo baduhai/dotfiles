@@ -14,11 +14,11 @@
 # Welcome prompt & safety check
 #===============================
 
-echo -n "Welcome to the dofiles install script. Please make sure that this script is not being run as root. Continue? (y/N) ==> "; read answer
+echo -n -e "Welcome to the dofiles install script. Please make sure that this script is not being run as root. Continue? \n(y/N) ==> "; read answer
 if [[ $answer = "N" ]] ; then
   echo "Please run this script as a normal user!" && exit
 else
-  echo -n "Has the git repo been cloned in '~/Repos'? (y/N) ==> "; read answer2
+  echo -n -e "Has the git repo been cloned in '~/Repos'? \n(y/N) ==> "; read answer2
   if [[ $answer2 = "N" ]] ; then
     echo "Please move the folder to its correct directory!" && exit
   else
@@ -64,7 +64,7 @@ ln -sf $dotfiles_dir/.scripts/weather ~/.scripts/
 # Ask to run Package Install Script
 #===================================
 
-echo -n "The script was successful, congratulations! Would you like to run the Package Install Script? (y/N)==>"; read answer3
+echo -n -e "The script was successful, congratulations! Would you like to run the Package Install Script? \n(y/N)==>"; read answer3
 if [[ $answer3 = "N" ]] ; then
   echo "Goodbye." && exit
 else
