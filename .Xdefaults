@@ -9,7 +9,7 @@ URxvt.letterSpace:	-1
 
 ! special
 *.foreground:   #aaaaaa
-*.background:   #1e1f29
+*.background:   #414141
 *.cursorColor:  #aaaaaa
 
 ! black
