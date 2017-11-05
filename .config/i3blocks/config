@@ -117,10 +117,10 @@ interval=15
 
 # Date Time
 #
-[time]
-color=#34E2E2
-command=printf ":" ; date "+%Y-%m-%d `printf ":"` %I:%M"
-interval=1
+#[time]
+#color=#aaaaaa
+#command=printf ":" ; date "+%Y-%m-%d `printf ":"` %I:%M"
+#interval=1
 
 # Generic media player support
 #
