@@ -18,28 +18,28 @@ URxvt.letterSpace:	-1
 
 ! red
 *.color1:       #ff512f
-*.color9:       #ff512f
+*.color9:       #ff6e52
 
 ! green
 *.color2:       #b2ffa9
-*.color10:      #b2ffa9
+*.color10:      #cbffc5
 
 ! yellow
 *.color3:       #fffd82
-*.color11:      #fffd82
+*.color11:      #fffea8
 
 ! blue
 *.color4:       #3185fc
-*.color12:      #3185fc
+*.color12:      #579bfc
 
 ! magenta
 *.color5:       #dd2476
-*.color13:      #dd2476
+*.color13:      #dd4e8e
 
 ! cyan
 *.color6:       #66d7d1
-*.color14:      #66d7d1
+*.color14:      #93d7d3
 
 ! white
-*.color7:       #f2efea
+*.color7:       #c7c5c1
 *.color15:      #f2efea
