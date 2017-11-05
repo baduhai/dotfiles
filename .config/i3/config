@@ -35,6 +35,15 @@ bindsym $mod+Return exec --no-startup-id urxvt -e fish
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# take a screenshot
+bindsym Print exec scrot
+bindsym --release Shift+Print exec scrot -s
+
+# special Fn Keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications

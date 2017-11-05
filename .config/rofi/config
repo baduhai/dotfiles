@@ -1,0 +1,4 @@
+rofi.terminal: 		urxvt
+rofi.sidebar-mode:  true
+rofi.theme: 		sidestyle.rasi
+rofi.show-icons: 	false
