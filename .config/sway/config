@@ -235,7 +235,7 @@ set $lmagenta #dd2476
 set $lcyan    #66d7d1
 set $white    #f2efea
 # Color                 border    background text    indicator  child_border
-client.focused          $red      $black     $gray   $red       $lmagenta
+client.focused          $red      $black     $gray   $red       $red
 client.focused_inactive $gray     $black     $gray   $gray      $gray
 client.unfocused        $black    $black     $gray   $black     $magenta
 client.urgent           $lgreen   $black     $gray   $lgreen    $lmagenta
