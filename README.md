@@ -9,9 +9,9 @@ In this repository you will find the dotfiles I have deemed worthy of being in t
 
 # To-Do
 
-* Test install script
+* ~~Test install script~~
 * Finish package install script
   * Test package install script
-* Add OpenBox config
-* Add Sway config
+* ~~Add OpenBox config~~
+* ~~Add Sway config~~
 * Add Way Cooler config
