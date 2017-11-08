@@ -19,7 +19,7 @@ offset-x = 0
 offset-y = 0
 monitor = eDP1
 
-background = ${colors.background}
+background = #e6414141
 foreground = ${colors.foreground}
 
 overline-size = 1
@@ -27,7 +27,7 @@ overline-color = ${colors.background}
 underline-size = 2
 underline-color = ${colors.background}
 
-border-top-size = 1
+border-top-size = 0
 border-top-color = #373737
 border-bottom-size = 0
 border-bottom-color = #333
@@ -42,7 +42,7 @@ font-1 = "FontAwesome:pixelsize=10;1"
 
 modules-left = i3
 modules-center = 
-modules-right = volume wlan battery date powermenu
+modules-right = backlight volume wlan battery date powermenubar
 
 tray-position = center
 tray-padding = 1
@@ -50,49 +50,15 @@ tray-scale = 0
 
 enable-ipc = true
 
-[module/muunreads]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/mu-unreads.sh
-
-[module/compton]
-type = custom/script
-format-prefix = "CMPTN "
-format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/compton.sh
-click-left = ~/.config/polybar/compton-toggle.sh
-interval = 5
-
-[module/powermenu]
-type = custom/menu
-
-label-open = 
-label-open-foreground = #ff512f
-label-close = " "
-label-close-foreground = #ff512f
-
-menu-0-0 = 
-menu-0-0-exec = i3-msg exit
-menu-0-1 = 
-menu-0-1-exec = systemctl suspend
-menu-0-2 = 
-menu-0-2-exec = reboot
-menu-0-3 = " "
-menu-0-3-exec = poweroff
-
-menu-0-0-padding = 1
-menu-0-1-padding = 1
-menu-0-2-padding = 1
-
-[module/memory]
-type = internal/memory
-interval = 3
-format-prefix = "MEM "
-format-prefix-foreground = ${colors.foreground-alt}
-label = %percentage_used%%
+[module/backlight]
+type = internal/xbacklight
+output = eDP1
+format = <ramp> <label>
+label = %percentage%% |
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
 
 [module/wlan]
 type = internal/network
@@ -111,9 +77,6 @@ date = "%a %d/%m/%y"
 label = %time% %date% |
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-background = ${colors.background}
-label-background = ${colors.background}
-
 
 [module/volume]
 type = internal/volume
@@ -160,3 +123,74 @@ animation-charging-framerate = 750
 type = internal/i3
 label-focused-foreground = #ff512f
 label-unfocused-foreground = ${colors.foreground-alt}
+
+[module/powermenubar]
+type = custom/text
+content = ""
+content-foreground = #ff512f
+click-left = polybar powermenu
+
+[bar/powermenu]
+width = 28%
+height = 40
+offset-x = 1370
+offset-y = 44
+monitor = eDP1
+
+override-redirect = true
+wm-restack = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 1
+overline-color = ${colors.background}
+underline-size = 2
+underline-color = ${colors.background}
+
+border-top-size = 1
+border-top-color = #373737
+border-bottom-size = 0
+border-bottom-color = #333
+
+padding-left = 2
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Fira Mono:size=10;1"
+font-1 = "FontAwesome:pixelsize=10;1"
+
+modules-left = 
+modules-center = lock logout suspend reboot poweroff closepowermenu
+modules-right = 
+
+[module/lock]
+type = custom/text
+content = "%{F#ff512f} %{F-}Lock"
+click-left = "pkill -n polybar ; i3lock-fancy -p"
+
+[module/suspend]
+type = custom/text
+content = "%{F#ff512f} %{F-}Suspend"
+click-left = "pkill -n polybar ; i3lock-fancy -p && systemctl suspend"
+
+[module/logout]
+type = custom/text
+content = "%{F#ff512f} %{F-}Logout"
+click-left = "pkill -n polybar ; i3-msg exit"
+
+[module/reboot]
+type = custom/text
+content = "%{F#ff512f} %{F-}Reboot"
+click-left = "pkill -n polybar ; systemctl reboot"
+
+[module/poweroff]
+type = custom/text
+content = "%{F#ff512f} %{F-}Poweroff"
+click-left = "pkill -n polybar ; systemctl poweroff"
+
+[module/closepowermenu]
+type = custom/text
+content = "%{F#ff512f} %{F-}Cancel"
+click-left = "pkill -n polybar"
