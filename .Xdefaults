@@ -6,10 +6,11 @@ URxvt.urlLauncher: 	firefox
 URxvt.cursorBlink: 	true
 URxvt.geometry:		80x23
 URxvt.letterSpace:	-1
+URxvt.depth: 32
 
 ! special
 *.foreground:   #aaaaaa
-*.background:   #414141
+*.background:   [90]#414141
 *.cursorColor:  #aaaaaa
 
 ! black
