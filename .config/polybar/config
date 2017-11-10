@@ -27,22 +27,26 @@ overline-color = ${colors.background}
 underline-size = 2
 underline-color = ${colors.background}
 
-border-top-size = 0
-border-top-color = #373737
+border-top-size = 7
+border-top-color = #00ffffff
 border-bottom-size = 0
-border-bottom-color = #333
+border-bottom-color = #00ffffff
+border-left-size = 7
+border-left-color = #00ffffff
+border-right-size = 7
+border-right-color = #00ffffff
 
-padding-left = 2
-padding-right = 3
+padding-left = 0
+padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Fira Mono:size=10;1"
-font-1 = "FontAwesome:pixelsize=10;1"
+font-0 = "Fira Mono:pixelsize=10;1"
+font-1 = "FontAwesome:pixelsize=14;1""
 
-modules-left = i3
+modules-left = drunmenu i3 separator title
 modules-center = 
-modules-right = backlight volume wlan battery date powermenubar
+modules-right = redshift separator megasync separator backlight separator volume separator wlan separator battery separator date powermenubar
 
 tray-position = center
 tray-padding = 1
@@ -50,22 +54,46 @@ tray-scale = 0
 
 enable-ipc = true
 
+[module/separator]
+type = custom/text
+content = "|"
+content-foreground = ${colors.foreground}
+
+[module/redshift]
+type = custom/text
+content = "%{F#aaa} %{F-}RDSFT"
+click-left = bash "/home/william/.scripts/redshifttoggle.sh"
+
+[module/megasync]
+type = custom/text
+content = "%{F#aaa} %{F-}MEGA"
+click-left = megasync
+
+[module/title]
+type = internal/xwindow
+label = " %title%"
+label-foreground = ${colors.foreground}
+
 [module/backlight]
 type = internal/xbacklight
 output = eDP1
-format = <ramp> <label>
-label = %percentage%% |
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+format = <bar> 
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.foreground}
+bar-fill = ─
+bar-fill-foreground = ${colors.foreground}
+bar-empty = ─
+bar-empty-foreground = ${colors.foreground-alt}
 
 [module/wlan]
 type = internal/network
 interface = wlp58s0
 interval = 3.0
 format-connected = <label-connected>
-label-connected = %essid% |
+label-connected = %essid%
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 
@@ -74,7 +102,7 @@ type = internal/date
 interval = 5
 time = "%H:%M"
 date = "%a %d/%m/%y"
-label = %time% %date% |
+label = %time% %date% 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
@@ -82,14 +110,14 @@ format-prefix-foreground = ${colors.foreground-alt}
 type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%% |
+label-volume = %percentage%% 
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.foreground-alt}
 
-label-muted =  MUTED
+label-muted =  MUTED 
 format-muted-foreground = ${colors.foreground-alt}
 
 [module/battery]
@@ -98,8 +126,8 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging> |
-format-discharging = <ramp-capacity> <label-discharging> |
+format-charging = <animation-charging> <label-charging> 
+format-discharging = <ramp-capacity> <label-discharging> 
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
@@ -121,34 +149,42 @@ animation-charging-framerate = 750
 
 [module/i3]
 type = internal/i3
-label-focused-foreground = #ff512f
+label-focused-foreground = ${colors.foreground}
 label-unfocused-foreground = ${colors.foreground-alt}
+
+[module/drunmenu]
+type = custom/text
+content = "    "
+content-background = #ff512f
+content-foreground = ${colors.foreground}
+click-left = rofi -show drun
 
 [module/powermenubar]
 type = custom/text
-content = ""
-content-foreground = #ff512f
+content = "    "
+content-foreground = ${colors.foreground}
+content-background = #ff512f
 click-left = polybar powermenu
 
 [bar/powermenu]
 width = 28%
 height = 40
-offset-x = 1370
-offset-y = 44
+offset-x = 1374
+offset-y = 55
 monitor = eDP1
 
 override-redirect = true
 wm-restack = true
 
-background = ${colors.background}
+background = #e6414141
 foreground = ${colors.foreground}
 
 overline-size = 1
-overline-color = ${colors.background}
+overline-color = #e6414141
 underline-size = 2
 underline-color = ${colors.background}
 
-border-top-size = 1
+border-top-size = 0
 border-top-color = #373737
 border-bottom-size = 0
 border-bottom-color = #333
@@ -159,7 +195,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Fira Mono:size=10;1"
-font-1 = "FontAwesome:pixelsize=10;1"
+font-1 = "FontAwesome:pixelsize=14;1"
 
 modules-left = 
 modules-center = lock logout suspend reboot poweroff closepowermenu

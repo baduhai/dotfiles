@@ -11,12 +11,12 @@
 	/* This variables change other elements color
 	 * Change here and it will change over all the
 	 * theme (for an unified experience) */
-	fc-color: #FF512F;
-	bg-color: #373737;
-	fc-color-trans: #FF512FFF; 
-	bg-color-trans: #373737FF;
+	fc-color: #ff512f;
+	bg-color: #414141;
+	fc-color-trans: #ff512fff; 
+	bg-color-trans: #414141e6;
 
-	font: "Open Sans 11";
+	font: "Fira Mono 11";
 }
 
 /* ================================================= */
@@ -26,7 +26,7 @@
 	fullscreen:    true;
 	location:      west;
 	anchor:        west;
-	border:        0px 0px 0px 0px;
+	border:        55px 0px 9px 9px;
 	transparency:  "real";
 
 	orientation:  horizontal;
@@ -50,7 +50,7 @@
 /* Sidebar and its elements                          */
 /* ================================================= */
 #sidebar {
-	border:  0px 0px 0px 0px;
+	border:  10px 0px 0px 0px;
 }
 
 #button {
@@ -67,8 +67,8 @@
 /*  Input bar                                        */
 /* ================================================= */
 #inputbar {
-	background-color:  @bg-color;
-	padding:           5px;
+	background-color:  @bg-color-trans;
+	padding:           10px;
 	spacing:					 5px;
 }
 
