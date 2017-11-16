@@ -51,7 +51,7 @@ bindsym $mod+d exec rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id polybar powermenu
 
 # change focus
 bindsym $mod+h focus left
@@ -144,7 +144,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id polybar powermenu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -197,10 +197,11 @@ client.unfocused        $gray     $black     $gray   $gray      $gray
 client.urgent           $gray     $black     $gray   $gray      $grau
 gaps inner 6
 gaps outer 2
+smart_gaps on
 for_window [class="^.*"] border pixel 3
 
 # start-up programs
 exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-fill ~/Pictures/walls/1080.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/walls/buil.jpg
 exec --no-startup-id megasync
 exec --no-startup-id polybar default

@@ -26,7 +26,7 @@
 	fullscreen:    true;
 	location:      west;
 	anchor:        west;
-	border:        55px 0px 9px 9px;
+	border:        40px 0px 0px 0px;
 	transparency:  "real";
 
 	orientation:  horizontal;

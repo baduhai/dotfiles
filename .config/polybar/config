@@ -19,7 +19,7 @@ offset-x = 0
 offset-y = 0
 monitor = eDP1
 
-background = #e6414141
+background = #414141
 foreground = ${colors.foreground}
 
 overline-size = 1
@@ -27,28 +27,27 @@ overline-color = ${colors.background}
 underline-size = 2
 underline-color = ${colors.background}
 
-border-top-size = 7
+border-top-size = 0
 border-top-color = #00ffffff
 border-bottom-size = 0
 border-bottom-color = #00ffffff
-border-left-size = 7
+border-left-size = 0
 border-left-color = #00ffffff
-border-right-size = 7
+border-right-size = 0
 border-right-color = #00ffffff
 
 padding-left = 0
 padding-right = 0
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = "Fira Mono:pixelsize=10;1"
 font-1 = "FontAwesome:pixelsize=14;1""
 
 modules-left = drunmenu i3 separator title
-modules-center = 
 modules-right = redshift separator megasync separator backlight separator volume separator wlan separator battery separator date powermenubar
 
-tray-position = center
+tray-position = left
 tray-padding = 1
 tray-scale = 0
 
@@ -56,18 +55,18 @@ enable-ipc = true
 
 [module/separator]
 type = custom/text
-content = "|"
+content = " | "
 content-foreground = ${colors.foreground}
 
 [module/redshift]
 type = custom/text
 content = "%{F#aaa} %{F-}RDSFT"
-click-left = bash "/home/william/.scripts/redshifttoggle.sh"
+click-left = /home/william/.scripts/redshifttoggle.sh
 
 [module/megasync]
 type = custom/text
 content = "%{F#aaa} %{F-}MEGA"
-click-left = megasync
+click-left = megasync &
 
 [module/title]
 type = internal/xwindow
@@ -102,7 +101,7 @@ type = internal/date
 interval = 5
 time = "%H:%M"
 date = "%a %d/%m/%y"
-label = %time% %date% 
+label = "%time% %date% " 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
@@ -164,13 +163,13 @@ type = custom/text
 content = "    "
 content-foreground = ${colors.foreground}
 content-background = #ff512f
-click-left = polybar powermenu
+click-left = polybar powermenu &
 
 [bar/powermenu]
 width = 28%
 height = 40
 offset-x = 1374
-offset-y = 55
+offset-y = 47
 monitor = eDP1
 
 override-redirect = true
