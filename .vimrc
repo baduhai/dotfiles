@@ -16,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'OmniCppComplete'
-set number
+set relativenumber
 syntax on
 set tabstop=4
 set autoindent
