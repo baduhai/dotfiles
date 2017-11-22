@@ -174,14 +174,14 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-set $black    #414141
+set $black    #839496
 set $red      #ff512f
 set $green    #b2ffa9
 set $yellow   #fffd82
 set $blue     #3185fc
 set $magenta  #dd2476
 set $cyan     #66d7d1
-set $gray     #aaaaaa
+set $gray     #fdf6e3
 set $darkgray #c7c5c1
 set $lred     #ff6e52
 set $lgreen   #cbffc5
@@ -202,6 +202,6 @@ for_window [class="^.*"] border pixel 3
 
 # start-up programs
 exec --no-startup-id compton -b
-exec_always --no-startup-id feh --bg-fill ~/Pictures/walls/buil.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/CodeSolarized.png
 exec --no-startup-id megasync
 exec --no-startup-id polybar default

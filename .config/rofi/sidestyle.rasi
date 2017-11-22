@@ -5,16 +5,16 @@
 
 * {
 	/* Make text color white and background fully transparent */
-	text-color:        White;
+	text-color:        #002b36;
 	background-color:  rgba(0,0,0,0);
 
 	/* This variables change other elements color
 	 * Change here and it will change over all the
 	 * theme (for an unified experience) */
 	fc-color: #ff512f;
-	bg-color: #414141;
-	fc-color-trans: #ff512fff; 
-	bg-color-trans: #414141e6;
+	bg-color: #fdf6e3;
+	fc-color-trans: #dc322fff; 
+	bg-color-trans: #fdf6e3ff;
 
 	font: "Fira Mono 11";
 }
