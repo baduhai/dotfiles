@@ -40,10 +40,9 @@ log_file=~/dofilesInstallScriptLog.txt
 sudo rm -rf ~/.Xdefaults
 sudo rm -rf ~/.Xresources
 sudo rm -rf ~/.gitconfig
-sudo rm -rf ~/.config/ignore-lid-switch-tweak.desktop
-sudo rm -rf ~/.scripts/cpu
-sudo rm -rf ~/.scripts/gnome-tweak-tool-lid-inhibitor
-sudo rm -rf ~/.scripts/weather
+sudo rm -rf ~/.config
+sudo rm -rf ~/.scripts
+sudo rm -rf ~/.vimrc
 
 #=============================
 # Creating Folders & SymLinks
@@ -52,13 +51,14 @@ sudo rm -rf ~/.scripts/weather
 cd
 mkdir .config
 mkdir .scripts
+mkdir .config/nvim
 ln -sf $dotfiles_dir/.Xdefaults
 ln -sf $dotfiles_dir/.Xresources
 ln -sf $dotfiles_dir/.gitconfig
-ln -sf $dotfiles_dir/.config/ignore-lid-switch-tweak.desktop ~/.config/
-ln -sf $dotfiles_dir/.scripts/cpu ~/.scripts/
-ln -sf $dotfiles_dir/.scripts/gnome-tweak-tool-lid-inhibitor ~/.scripts/
-ln -sf $dotfiles_dir/.scripts/weather ~/.scripts/
+ln -sf $dotfiles_dir/.vimrc
+ln -sf $dotfiles_dir/.config/ ~/.config/
+ln -sf $dotfiles_dir/.scripts ~/.scripts/
+ln -sf ~.vimrc ~/.config/nvim/init.vim
 
 #===================================
 # Ask to run Package Install Script
