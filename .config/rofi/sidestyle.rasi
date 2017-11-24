@@ -5,18 +5,18 @@
 
 * {
 	/* Make text color white and background fully transparent */
-	text-color:        #002b36;
+	text-color:        #ffffff;
 	background-color:  rgba(0,0,0,0);
 
 	/* This variables change other elements color
 	 * Change here and it will change over all the
 	 * theme (for an unified experience) */
 	fc-color: #ff512f;
-	bg-color: #fdf6e3;
-	fc-color-trans: #dc322fff; 
-	bg-color-trans: #fdf6e3ff;
+	bg-color: #272727;
+	fc-color-trans: #ff512fff; 
+	bg-color-trans: #272727ff;
 
-	font: "Fira Mono 11";
+	font: "xos4 Terminus 14";
 }
 
 /* ================================================= */
@@ -58,7 +58,7 @@
 }
 
 #button selected {
-	font:              "Fira 11";
+	font:              "xos4 Terminus 14";
 	background-color:  @fc-color-trans;
 }
 /* ================================================= */
@@ -73,11 +73,11 @@
 }
 
 #prompt {
-	font: "Fira 11";
+	font: "xos4 Terminus 14";
 }
 
 #entry {
-	font: "Fira 11";
+	font: "xos4 Terminus 14";
 	width: 15em;
 }
 /* ================================================= */
@@ -91,7 +91,7 @@
 }
 
 #element {
-	font:     "Fira 12";
+	font:     "xos4 Terminus 14";
 	padding:  12px 1.5em 12px 14px;
 }
 

@@ -174,14 +174,14 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-set $black    #839496
+set $black    #aaaaaa
 set $red      #ff512f
 set $green    #b2ffa9
 set $yellow   #fffd82
 set $blue     #3185fc
 set $magenta  #dd2476
 set $cyan     #66d7d1
-set $gray     #fdf6e3
+set $gray     #373737
 set $darkgray #c7c5c1
 set $lred     #ff6e52
 set $lgreen   #cbffc5
@@ -195,13 +195,13 @@ client.focused          $black    $black     $black  $black     $black
 client.focused_inactive $gray     $black     $gray   $gray      $gray
 client.unfocused        $gray     $black     $gray   $gray      $gray
 client.urgent           $gray     $black     $gray   $gray      $grau
-gaps inner 6
-gaps outer 2
-smart_gaps on
+# gaps inner 6
+# gaps outer 2
+# smart_gaps on
 for_window [class="^.*"] border pixel 3
 
 # start-up programs
 exec --no-startup-id compton -b
-exec_always --no-startup-id feh --bg-fill ~/Pictures/CodeSolarized.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/archistheb.png
 exec --no-startup-id megasync
 exec --no-startup-id polybar default
