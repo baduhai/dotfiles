@@ -1,5 +1,5 @@
 [colors]
-background = #373737
+background = #272727
 background-dark = #373737
 background-alt = #333
 foreground = #fff
@@ -9,43 +9,25 @@ secondary = #e60053
 alert = #aaa
 
 [global/wm]
-margin-top = 2
-margin-bottom = 2
+margin-top = 0
+margin-bottom = 0
 
 [bar/default]
 width = 100%
 height = 40
 offset-x = 0
 offset-y = 0
-monitor = eDP1
+monitor = eDP-1
 
-background = #414141
+background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 1
-overline-color = ${colors.background}
-underline-size = 2
-underline-color = ${colors.background}
+font-0 = xos4 Terminus:size=14;1
+font-1 = siji:size=14;1
 
-border-top-size = 0
-border-top-color = #00ffffff
-border-bottom-size = 0
-border-bottom-color = #00ffffff
-border-left-size = 0
-border-left-color = #00ffffff
-border-right-size = 0
-border-right-color = #00ffffff
-
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = "Fira Mono:pixelsize=10;1"
-font-1 = "FontAwesome:pixelsize=14;1""
-
-modules-left = drunmenu i3 separator title
-modules-right = redshift separator megasync separator backlight separator volume separator wlan separator battery separator date powermenubar
+modules-left = drun redshift megasync backlight
+modules-center = date
+modules-right = volume wlan battery powermenubar
 
 tray-position = left
 tray-padding = 1
@@ -53,129 +35,103 @@ tray-scale = 0
 
 enable-ipc = true
 
-[module/separator]
+[module/drun]
 type = custom/text
-content = " | "
-content-foreground = ${colors.foreground}
+content = "    "
+click-left = rofi -show drun
+content-background = #ff512f
 
 [module/redshift]
 type = custom/text
-content = "%{F#aaa} %{F-}RDSFT"
-click-left = /home/william/.scripts/redshifttoggle.sh
+content = "  RDSFT "
+click-left = ~/.scripts/redshift-toggle.sh
 
 [module/megasync]
 type = custom/text
-content = "%{F#aaa} %{F-}MEGA"
+content = " MEGA "
 click-left = megasync &
-
-[module/title]
-type = internal/xwindow
-label = " %title%"
-label-foreground = ${colors.foreground}
 
 [module/backlight]
 type = internal/xbacklight
-output = eDP1
-format = <bar> 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format = <bar>
+format-prefix = "  "
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = ${colors.foreground}
 bar-fill = ─
-bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
-bar-empty-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+format = <label>
+label =  %date%  %time%
+date = %Y-%m-%d
+time = %H:%M
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+label-volume = "%percentage%% "
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+label-muted = " muted "
 
 [module/wlan]
 type = internal/network
 interface = wlp58s0
-interval = 3.0
-format-connected = <label-connected>
-label-connected = %essid%
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-
-[module/date]
-type = internal/date
 interval = 5
-time = "%H:%M"
-date = "%a %d/%m/%y"
-label = "%time% %date% " 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-
-[module/volume]
-type = internal/volume
-
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%% 
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = ${colors.foreground-alt}
-
-label-muted =  MUTED 
-format-muted-foreground = ${colors.foreground-alt}
+format-connected = "<label-connected> "
+label-connected = %essid%
+format-connected-prefix = " "
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-
-format-charging = <animation-charging> <label-charging> 
-format-discharging = <ramp-capacity> <label-discharging> 
-
-format-full-prefix = " "
+format-charging = "<animation-charging> <label-charging> "
+format-discharging = "<ramp-capacity> <label-discharging> "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.alert}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-foreground = ${colors.foreground}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
 animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
-[module/i3]
-type = internal/i3
-label-focused-foreground = ${colors.foreground}
-label-unfocused-foreground = ${colors.foreground-alt}
-
-[module/drunmenu]
-type = custom/text
-content = "    "
-content-background = #ff512f
-content-foreground = ${colors.foreground}
-click-left = rofi -show drun
+animation-charging-framerate = 450
 
 [module/powermenubar]
 type = custom/text
-content = "    "
-content-foreground = ${colors.foreground}
+content = "    "
+click-left = polybar powermenu
 content-background = #ff512f
-click-left = polybar powermenu &
 
 [bar/powermenu]
-width = 28%
+width = 21%
 height = 40
-offset-x = 1374
-offset-y = 47
-monitor = eDP1
+offset-x = 1520
+offset-y = 40
+monitor = eDP-1
 
 override-redirect = true
 wm-restack = true
 
-background = #e6414141
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 overline-size = 1
@@ -188,44 +144,42 @@ border-top-color = #373737
 border-bottom-size = 0
 border-bottom-color = #333
 
-padding-left = 2
-padding-right = 2
+padding-left = 0
+padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Fira Mono:size=10;1"
-font-1 = "FontAwesome:pixelsize=14;1"
+font-0 = xos4 Terminus:size=14;1
+font-1 = siji:pixelsize=20;1
 
-modules-left = 
-modules-center = lock logout suspend reboot poweroff closepowermenu
-modules-right = 
+modules-center = lock logout suspend reboot poweroff closepowermenu 
 
 [module/lock]
 type = custom/text
-content = "%{F#ff512f} %{F-}Lock"
+content = "lock"
 click-left = "pkill -n polybar ; i3lock-fancy -p"
 
 [module/suspend]
 type = custom/text
-content = "%{F#ff512f} %{F-}Suspend"
+content = "suspend"
 click-left = "pkill -n polybar ; i3lock-fancy -p && systemctl suspend"
 
 [module/logout]
 type = custom/text
-content = "%{F#ff512f} %{F-}Logout"
+content = "logout"
 click-left = "pkill -n polybar ; i3-msg exit"
 
 [module/reboot]
 type = custom/text
-content = "%{F#ff512f} %{F-}Reboot"
+content = "reboot"
 click-left = "pkill -n polybar ; systemctl reboot"
 
 [module/poweroff]
 type = custom/text
-content = "%{F#ff512f} %{F-}Poweroff"
+content = "poweroff"
 click-left = "pkill -n polybar ; systemctl poweroff"
 
 [module/closepowermenu]
 type = custom/text
-content = "%{F#ff512f} %{F-}Cancel"
+content = "cancel"
 click-left = "pkill -n polybar"
