@@ -35,3 +35,7 @@ set relativenumber
 syntax on
 set tabstop=4
 set autoindent
+set mouse=a
+
+" NERDTree autostart
+autocmd vimenter * NERDTree
