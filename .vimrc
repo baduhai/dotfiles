@@ -38,4 +38,4 @@ set autoindent
 set mouse=a
 
 " NERDTree autostart
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
