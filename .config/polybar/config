@@ -1,5 +1,5 @@
 [colors]
-background = #272727
+background = #99301C
 background-dark = #373737
 background-alt = #333
 foreground = #fff
@@ -39,79 +39,94 @@ enable-ipc = true
 type = custom/text
 content = "    "
 click-left = rofi -show drun
-content-background = #ff512f
+content-background = #FF512F
 
 [module/redshift]
 type = custom/text
 content = "  RDSFT "
 click-left = ~/.scripts/redshift-toggle.sh
+content-background = #E5482A
 
 [module/megasync]
 type = custom/text
-content = " MEGA "
+content = "  MEGA "
 click-left = megasync &
+content-background = #CC4025 
 
 [module/backlight]
 type = internal/xbacklight
-format = <bar>
+format = "<bar>"
 format-prefix = "  "
+format-prefix-background = #B23820 
+format-suffix = " "
+format-suffix-background = #B23820
 bar-width = 10
 bar-indicator = |
+bar-indicator-background = #B23820
 bar-fill = ─
+bar-fill-background = #B23820
 bar-empty = ─
+bar-empty-background = #B23820
 
 [module/date]
 type = internal/date
 format = <label>
-label =  %date%  %time%
+label = "  %date%  %time% "
+label-background = #7F2817
 date = %Y-%m-%d
 time = %H:%M
 
 [module/volume]
 type = internal/volume
 format-volume = <ramp-volume> <label-volume>
+format-volume-background = #B23820 
 label-volume = "%percentage%% "
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 label-muted = " muted "
+label-muted-background = #B23820 
 
 [module/wlan]
 type = internal/network
 interface = wlp58s0
 interval = 5
 format-connected = "<label-connected> "
+format-connected-background = #CC4025
 label-connected = %essid%
-format-connected-prefix = " "
+format-connected-prefix = "  "
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-format-charging = "<animation-charging> <label-charging> "
-format-discharging = "<ramp-capacity> <label-discharging> "
-format-full-prefix = " "
+format-charging = " <animation-charging> <label-charging> "
+format-charging-background = #E5482A
+format-discharging = " <ramp-capacity> <label-discharging> "
+format-discharging-background = #E5482A
+format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.foreground-alt}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
+format-full-prefix-background = #E5482A
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-5 = " "
+ramp-capacity-6 = " "
+ramp-capacity-7 = " "
+ramp-capacity-8 = " "
 ramp-capacity-foreground = ${colors.foreground}
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
-animation-charging-7 = 
-animation-charging-8 = 
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+animation-charging-4 = " "
+animation-charging-5 = " "
+animation-charging-6 = " "
+animation-charging-7 = " "
+animation-charging-8 = " "
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 450
 
@@ -119,7 +134,7 @@ animation-charging-framerate = 450
 type = custom/text
 content = "    "
 click-left = polybar powermenu
-content-background = #ff512f
+content-background = #FF512F
 
 [bar/powermenu]
 width = 21%
@@ -157,12 +172,12 @@ modules-center = lock logout suspend reboot poweroff closepowermenu
 [module/lock]
 type = custom/text
 content = "lock"
-click-left = "pkill -n polybar ; i3lock-fancy -p"
+click-left = "pkill -n polybar ; i3lock -i /home/william/Pictures/locked.png"
 
 [module/suspend]
 type = custom/text
 content = "suspend"
-click-left = "pkill -n polybar ; i3lock-fancy -p && systemctl suspend"
+click-left = "pkill -n polybar ; i3lock -i /home/william/Pictures/locked.png && systemctl suspend"
 
 [module/logout]
 type = custom/text
