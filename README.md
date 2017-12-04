@@ -15,3 +15,7 @@ In this repository you will find the dotfiles I have deemed worthy of being in t
 * ~~Add OpenBox config~~
 * ~~Add Sway config~~
 * Add Way Cooler config
+
+# Current rice
+
+![rice](https://i.imgur.com/yUEuN5G.png)
