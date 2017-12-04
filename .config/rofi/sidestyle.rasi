@@ -11,9 +11,9 @@
 	/* This variables change other elements color
 	 * Change here and it will change over all the
 	 * theme (for an unified experience) */
-	fc-color: #ff512f;
+	fc-color: #878787;
 	bg-color: #272727;
-	fc-color-trans: #ff512fff; 
+	fc-color-trans: #878787ff; 
 	bg-color-trans: #272727ff;
 
 	font: "xos4 Terminus 14";

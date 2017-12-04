@@ -1,5 +1,5 @@
 [colors]
-background = #99301C
+background = #373737
 background-dark = #373737
 background-alt = #333
 foreground = #fff
@@ -39,60 +39,59 @@ enable-ipc = true
 type = custom/text
 content = "    "
 click-left = rofi -show drun
-content-background = #FF512F
-
+content-background = #878787
 [module/redshift]
 type = custom/text
 content = "  RDSFT "
 click-left = ~/.scripts/redshift-toggle.sh
-content-background = #E5482A
+content-background = #737373
 
 [module/megasync]
 type = custom/text
 content = "  MEGA "
 click-left = megasync &
-content-background = #CC4025 
+content-background = #5E5E5E 
 
 [module/backlight]
 type = internal/xbacklight
 format = "<bar>"
 format-prefix = "  "
-format-prefix-background = #B23820 
+format-prefix-background = #4B4B4B 
 format-suffix = " "
-format-suffix-background = #B23820
+format-suffix-background = #4B4B4B
 bar-width = 10
 bar-indicator = |
-bar-indicator-background = #B23820
+bar-indicator-background = #4B4B4B
 bar-fill = ─
-bar-fill-background = #B23820
+bar-fill-background = #4B4B4B
 bar-empty = ─
-bar-empty-background = #B23820
+bar-empty-background = #4B4B4B
 
 [module/date]
 type = internal/date
 format = <label>
 label = "  %date%  %time% "
-label-background = #7F2817
+label-background = #313131
 date = %Y-%m-%d
 time = %H:%M
 
 [module/volume]
 type = internal/volume
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = #B23820 
+format-volume-background = #4B4B4B 
 label-volume = "%percentage%% "
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 label-muted = " muted "
-label-muted-background = #B23820 
+label-muted-background = #4B4B4B 
 
 [module/wlan]
 type = internal/network
 interface = wlp58s0
 interval = 5
 format-connected = "<label-connected> "
-format-connected-background = #CC4025
+format-connected-background = #5E5E5E
 label-connected = %essid%
 format-connected-prefix = "  "
 
@@ -102,12 +101,12 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 format-charging = " <animation-charging> <label-charging> "
-format-charging-background = #E5482A
+format-charging-background = #737373
 format-discharging = " <ramp-capacity> <label-discharging> "
-format-discharging-background = #E5482A
+format-discharging-background = #737373
 format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-prefix-background = #E5482A
+format-full-prefix-background = #737373
 ramp-capacity-0 = " "
 ramp-capacity-1 = " "
 ramp-capacity-2 = " "
@@ -134,7 +133,7 @@ animation-charging-framerate = 450
 type = custom/text
 content = "    "
 click-left = polybar powermenu
-content-background = #FF512F
+content-background = #878787
 
 [bar/powermenu]
 width = 21%

@@ -203,6 +203,6 @@ for_window [class="^.*"] border pixel 3
 
 # start-up programs
 exec --no-startup-id compton --xrender-sync --xrender-sync-fence --config ~/.config/compton.conf -b
-exec_always --no-startup-id feh --bg-fill ~/Pictures/bohr.jpg
+exec_always --no-startup-id bash /home/william/.scripts/RandomTile.sh
 exec --no-startup-id megasync
 exec --no-startup-id polybar default
