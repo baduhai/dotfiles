@@ -11,10 +11,10 @@
 	/* This variables change other elements color
 	 * Change here and it will change over all the
 	 * theme (for an unified experience) */
-	fc-color: #878787;
+	fc-color: #ec5f67;
 	bg-color: #272727;
-	fc-color-trans: #878787ff; 
-	bg-color-trans: #272727ff;
+	fc-color-trans: #ec5f67; 
+	bg-color-trans: #272727;
 
 	font: "xos4 Terminus 14";
 }
@@ -26,7 +26,7 @@
 	fullscreen:    true;
 	location:      west;
 	anchor:        west;
-	border:        40px 0px 0px 0px;
+	border:        3px 0px 0px 0px;
 	transparency:  "real";
 
 	orientation:  horizontal;
