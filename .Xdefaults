@@ -1,47 +1,52 @@
 !-----URxvt Settings------
 
-URxvt.font: 		xft:xos4 Terminus:pixelsize=18
-URxvt.scrollBar: 	false
-URxvt.urlLauncher: 	firefox
-URxvt.cursorBlink: 	true
-URxvt.geometry:		80x23
-URxvt.letterSpace:	-1
-URxvt.depth: 32
+URxvt.font: 			xft:Fira Mono:pixelsize=16
+URxvt.scrollBar: 		false
+URxvt.urlLauncher: 		firefox
+URxvt.cursorBlink: 		true
+URxvt.geometry:			80x23
+URxvt.letterSpace:		-1
+URxvt.perl-ext-common: 		default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher: 	firefox
+URxvt.url-select.underline: 	true
+URxvt.keysym.M-u: 		perl:url-select:select_next
+URxvt.keysym.M-Escape:  	perl:keyboard-select:activate
+URxvt.keysym.M-s: 		perl:keyboard-select:search
 
 !-----Colours-----
 ! special
-*.foreground:   #b9b9b9
-*.background:   #101010
-*.cursorColor:  #b9b9b9
+*.foreground:   #373737
+*.background:   #ffffff
+*.cursorColor:  #373737
 
 ! black
-*.color0:       #101010
-*.color8:       #525252
+*.color0:       #2b303b
+*.color8:       #65737e
 
 ! red
-*.color1:       #7c7c7c
-*.color9:       #7c7c7c
+*.color1:       #bf616a
+*.color9:       #bf616a
 
 ! green
-*.color2:       #8e8e8e
-*.color10:      #8e8e8e
+*.color2:       #a3be8c
+*.color10:      #a3be8c
 
 ! yellow
-*.color3:       #a0a0a0
-*.color11:      #a0a0a0
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
 
 ! blue
-*.color4:       #686868
-*.color12:      #686868
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
 
 ! magenta
-*.color5:       #747474
-*.color13:      #747474
+*.color5:       #b48ead
+*.color13:      #b48ead
 
 ! cyan
-*.color6:       #868686
-*.color14:      #868686
+*.color6:       #96b5b4
+*.color14:      #96b5b4
 
 ! white
-*.color7:       #b9b9b9
-*.color15:      #f7f7f7
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
