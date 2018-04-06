@@ -12,7 +12,7 @@ call vundle#begin("~/.nvim/bundle")
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'lervag/vimtex'
-Plugin 'OmniCppComplete'
+Plugin 'Valloric/YouCompleteMe'
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
