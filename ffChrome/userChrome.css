@@ -1,0 +1,246 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Theme */
+
+:root:-moz-lwtheme-brighttext {                                      /* Colors (Use Dark Theme) */
+  --chrome-background-color: #b8b9bc !important;                     /* tab strip background & inactive tabs */
+  --chrome-secondary-background-color: #e7e8eb !important;           /* navbar & active tab */
+  --chrome-color: #3a3a3a !important;                                /* url & tab text, close tab & new tab buttons */
+  --url-and-searchbar-background-color: #b8b9bc !important;          /* urlbar background color */
+  --background-color: #444 !important;                               /* top border of out of focus window */
+}
+
+:root {
+  --tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
+  --toolbarbutton-border-radius: 0px !important;                     /* sharpen adreess bar */
+}
+
+/* Move Tab-bar beside Nav-bar */
+#TabsToolbar {      
+  margin-bottom: 0px !important;                /* not needed anymore? */
+  margin-top: -1px !important;                   /*  */
+  margin-left: 35vw !important;
+  margin-right: -1px !important;
+  max-height: 32px !important;
+}
+#nav-bar {      
+  margin-bottom: -1px !important;               /* remove navbar bottom 1px border */
+  margin-top: -32px !important;
+  margin-right: 65vw !important; 
+  border-top: none !important;
+}   
+
+/* Remove padding above tabbar in compact mode */
+#main-window[sizemode="normal"] > #titlebar {
+  -moz-appearance: initial !important;
+}
+
+
+/* Back & Forward buttons */  
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {
+  transform: scale(0.9, 0.9) !important;
+  margin-left: -2px !important;
+  margin-right: -2px !important; 
+}
+
+/* Move hamburger menu to the left */
+#PanelUI-button,
+#customization-panel-container,
+#customization-panelWrapper .panel-arrow { 
+  -moz-box-ordinal-group: 0 !important;
+  margin-right: 0px !important;
+}
+#appMenu-popup {
+  margin-right: -258px !important;
+}
+#appMenu-popup .panel-arrow {
+  margin-right: 248px !important;
+}
+
+/* More tools... overflow button */
+#nav-bar-overflow-button { 
+  transform: scale(0.9, 0.9) !important;
+  fill: var(--chrome-color) !important;
+}  
+
+
+/* Tabs */
+.tabbrowser-tab {
+  height: 32px !important; 
+}
+
+/* Remove empty space before first tab
+Delete this rule if you need a space to drag the window*/
+#TabsToolbar .titlebar-placeholder[type="pre-tabs"]{
+    display: none !important;
+}
+
+/*full-width tabs*/
+#TabsToolbar .tabbrowser-tab[fadein]:not([pinned]) {
+  flex-grow: 1 !important;
+  min-width: 11em !important;
+  max-width: 100% !important;
+}
+
+/* Remove border between tabs
+Delete this rule if you want separators between background tabs */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  border-left: none !important;
+}
+
+/* New tab button color */
+#new-tab-button, .tabs-newtab-button {
+  fill: var(--chrome-color) !important;
+  } 
+
+/* tab line - adjust color & size */
+.tab-line {
+  background-color: #e7e8eb !important;
+  height: -1px !important;
+  }
+
+/*Center tab text*/
+.tab-label {
+  -moz-box-flex: 1 !important;
+  text-align: center !important;
+}
+
+
+/* Hide various elements */
+/* Menu */
+#appMenu-fxa-container,                    /* Sign in to Sync */
+#appMenu-fxa-container+toolbarseparator,
+/* #appMenuRestoreLastSession, */
+#appMenu-zoom-controls,
+#appMenu-zoom-controls+toolbarseparator,
+#appMenu-edit-controls,
+#appMenu-edit-controls+toolbarseparator,
+#appMenu-library-button,
+#appMenu-customize-button,
+#appMenu-customize-button+toolbarseparator,
+#appMenu-open-file-button,
+#appMenu-save-file-button,
+#appMenu-find-button,
+#appMenu-more-button,
+
+/* URL Bar */
+#pageActionButton,
+#pocket-button-box,
+ar-button,
+.autocomplete-history-dropmarker,
+#identity-icon-labels
+{
+    display: none !important;
+}
+
+/* Hide info icon for sites that don't have permissions */
+#urlbar :not(.grantedPermissions) #identity-icon {
+        transition: 300ms !important; /* Animate icon hiding */
+	opacity: 0 !important; /* Make icons transparent */
+	-moz-margin-end: -1.1em !important; /* Hide icons by offsetting them */
+}
+
+/* Show info icon on navbar hover, except for new tab page search icon */
+#urlbar[pageproxystate="valid"]:hover #identity-icon {
+        transition: 300ms !important; /* Animate icon showing */
+	opacity: 1 !important; /* Make icons opaque */
+	-moz-margin-end: initial !important; /* Use initial margins to show icons */
+}
+
+/* Hide boders on urlbar */
+#urlbar, .searchbar-textbox {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Center URL */
+#urlbar .urlbar-input-box {
+    text-align: center;
+}
+
+
+
+/* Hides the zoom indicator */
+#urlbar-zoom-button { 
+  display: none !important; 
+}#pageActionSeparator { 
+  display: none !important;
+}
+
+/* Customize rows and columns for number and size of rows/cols you want */
+#widget-overflow-fixed-list {
+    display: grid;
+    grid-template-rows: 15px 25px; /* two rows, the second one taller */
+    grid-template-columns: 25px 25px 25px 25px 25px 25px 25px [col-end]; /* seven columns, with an anchorpoint at the end */
+}
+
+/* Hides labels */
+#widget-overflow-fixed-list .toolbarbutton-1 > .toolbarbutton-text {
+    display: none !important;
+}
+
+/* Constrains width */
+#widget-overflow-mainView {
+    max-width: 275px !important;
+    min-width: 275px !important;
+}
+/* Restores addon panel widths */
+.PanelUI-subView[title="Tab Session Manager"] {
+    min-width: 345px !important;
+}
+.PanelUI-subView[title="Violentmonkey"] {
+min-width: 280px !important;
+}
+.PanelUI-subView[title="Multi-Account Containers"] {
+    min-width: 300px !important;
+}
+
+/* Hides "Customize Toolbar..." button */
+#overflowMenu-customize-button {
+    display: none !important;
+}
+
+/* Search bar */
+
+/* Makes search bar take up whole top row */
+#widget-overflow-fixed-list #search-container {
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-start: 1;
+    grid-column-end: span col-end;
+}
+/* Important to make the search bar display */
+#widget-overflow-fixed-list #searchbar {
+    min-width: 275px !important;
+}
+/* Adjusts spacing */
+#widget-overflow-fixed-list .toolbarbutton-1 {
+    margin-top: -5px !important;
+    margin-bottom: -5px !important;
+}
+#widget-overflow-fixed-list {
+    margin-top: -10px !important;
+}
+
+.tabbrowser-tab:not(:hover) .tab-close-button{ display:none; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:block !important; }
+
+
+.tabbrowser-tab:not([pinned]):hover  .tab-icon-image {
+  display: none !important;
+}
+
+.tabbrowser-tab:hover  .tab-throbber,
+.tabbrowser-tab:hover  .tab-icon-image,
+.tabbrowser-tab:hover .tab-sharing-icon-overlay,
+.tabbrowser-tab:hover  .tab-icon-overlay,
+.tabbrowser-tab:hover  .tab-label-container,
+.tabbrowser-tab:hover  .tab-icon-sound {
+   -moz-box-ordinal-group: 2 !important;
+}
+
+.tabbrowser-tab .tab-close-button {
+  margin-left: -2px !important;
+  margin-right: 2px !important;
+}
