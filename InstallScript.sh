@@ -40,7 +40,7 @@ log_file=~/dofilesInstallScriptLog.txt
 sudo rm -rf ~/.Xdefaults
 sudo rm -rf ~/.Xresources
 sudo rm -rf ~/.gitconfig
-sudo rm -rf ~/.config
+#sudo rm -rf ~/.config
 sudo rm -rf ~/.scripts
 sudo rm -rf ~/.vimrc
 
@@ -51,25 +51,25 @@ sudo rm -rf ~/.vimrc
 cd
 mkdir .config
 mkdir .scripts
-mkdir .config/nvim
-mkdir .config/i3
-mkdir .config/polybar
-mkdir .config/rofi
+#mkdir .config/nvim
+#mkdir .config/i3
+#mkdir .config/polybar
+#mkdir .config/rofi
 ln -sf $dotfiles_dir/.Xdefaults
 ln -sf $dotfiles_dir/.Xresources
 ln -sf $dotfiles_dir/.gitconfig
 ln -sf $dotfiles_dir/.vimrc
-ln -sf $dotfiles_dir/.config/ignore-lid-switch-tweak.desktop ~/.config
-ln -sf $dotfiles_dir/.config/i3/config ~/.config/i3
-ln -sf $dotfiles_dir/.config/polybar/config ~/.config/polybar
-ln -sf $dotfiles_dir/.config/rofi/config ~/.config/rofi/config
-ln -sf $dotfiles_dir/.config/rofi/sidestyle.rasi ~/.config/rofi/sidestyle.rasi
+#ln -sf $dotfiles_dir/.config/ignore-lid-switch-tweak.desktop ~/.config
+#ln -sf $dotfiles_dir/.config/i3/config ~/.config/i3
+#ln -sf $dotfiles_dir/.config/polybar/config ~/.config/polybar
+#ln -sf $dotfiles_dir/.config/rofi/config ~/.config/rofi/config
+#ln -sf $dotfiles_dir/.config/rofi/sidestyle.rasi ~/.config/rofi/sidestyle.rasi
 ln -sf $dotfiles_dir/.scripts/bat.sh ~/.scripts/
 ln -sf $dotfiles_dir/.scripts/cpu ~/.scripts/
-ln -sf $dotfiles_dir/.scripts/gnome-tweak-tool-lid-inhibitor ~/.scripts/
+#ln -sf $dotfiles_dir/.scripts/gnome-tweak-tool-lid-inhibitor ~/.scripts/
 ln -sf $dotfiles_dir/.scripts/redshifttoggle.sh ~/.scripts/
 ln -sf $dotfiles_dir/.scripts/weather ~/.scripts/
-ln -sf $dotfiles_dir/.vimrc ~/.config/nvim/init.vim
+#ln -sf $dotfiles_dir/.vimrc ~/.config/nvim/init.vim
 
 #===================================
 # Ask to run Package Install Script
