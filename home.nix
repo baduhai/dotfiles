@@ -12,19 +12,22 @@
       name = "breeze_cursors";
       package = pkgs.breeze-icons;
     };
-    # Configuring arbitrary files
+    # Configuring arbitrary files.
     file = {
-      "/.scripts/pfetch" = {
+      "/.scripts/pfetch" = { # pfetch script.
         executable = true;
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.scripts/pfetch";
           sha256 = "Z7f/W6ayCSAhUswOG8SzBZZjeNX1vh4G4ZBRuSU5sFo=";
         };
       };
-      ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl {
+      ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl { # MangoHud config.
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/MangoHud/MangoHud.conf";
         sha256 = "VZoyVelhNy+BZ0Ep7qWmMwuLZu2pTu/MZlIt8clS3zo=";
       };
+      # Autosart applications.
+      ".config/autostart/org.kde.yakuake.desktop".source = "/var/run/current-system/sw/share/applications/org.kde.yakuake.desktop";
+      ".config/autostart/megasync.desktop".source = "/var/run/current-system/sw/share/applications/megasync.desktop";
     };
   };
 
