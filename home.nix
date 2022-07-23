@@ -25,6 +25,14 @@
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/MangoHud/MangoHud.conf";
         sha256 = "VZoyVelhNy+BZ0Ep7qWmMwuLZu2pTu/MZlIt8clS3zo=";
       };
+      ".config/kitty/search.py".source = pkgs.fetchurl {
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/kitty/search.py";
+        sha256 = "mi5GB8CmWafAdp3GYnsQM4VHpXhuaVYX7YDT+9426Jc=";
+      };
+      ".config/kitty/scroll_mark.py".source = pkgs.fetchurl {
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/kitty/scroll_mark.py";
+        sha256 = "Abif6LIOCiXyDdQMZ4pQnLK++It0VYIM+WE7Oydwkfo=";
+      };
       # Autosart applications.
       ".config/autostart/org.kde.yakuake.desktop".source = "/var/run/current-system/sw/share/applications/org.kde.yakuake.desktop";
       ".config/autostart/megasync.desktop".source = "/var/run/current-system/sw/share/applications/megasync.desktop";
@@ -123,6 +131,9 @@
         name = "Hack Nerd Font";
         size = 10;
       };
+      keybindings = {
+        "kitty_mod+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
+      };
       settings = {
         tab_bar_edge = "top";
         tab_switch_strategy = "left";
@@ -136,6 +147,7 @@
         initial_window_width = "120c";
         initial_window_height = "42c";
         confirm_os_window_close = "-2";
+
       };
     };
     # Git configuration.
