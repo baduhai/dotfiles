@@ -1,3 +1,52 @@
+#!/bin/sh
+#
+# pfetch - Simple POSIX sh fetch script.
+
+# Wrapper around all escape sequences used by pfetch to allow for
+# greater control over which sequences are used (if any at all).
+esc() {
+    case $1 in
+        CUU) e="${esc_c}[${2}A" ;; # cursor up
+        CUD) e="${esc_c}[${2}B" ;; # cursor down
+        CUF) e="${esc_c}[${2}C" ;; # cursor right
+        CUB) e="${esc_c}[${2}D" ;; # cursor left
+
+        # text formatting
+        SGR)
+            case ${PF_COLOR:=1} in
+                (1)
+                    e="${esc_c}[${2}m"
+                ;;
+
+                (0)
+                    # colors disabled
+                    e=
+                ;;
+            esac
+        ;;
+
+        # line wrap
+        DECAWM)
+            case $TERM in
+                (dumb | minix | cons25)
+                    # not supported
+                    e=
+                ;;
+
+                (*)
+                    e="${esc_c}[?7${2}"
+                ;;
+            esac
+        ;;
+    esac
+}
+
+# Print a sequence to the terminal.
+esc_p() {
+    esc "$@"
+    printf '%s' "$e"
+}
+
 # This is just a simple wrapper around 'command -v' to avoid
 # spamming '>/dev/null' throughout this function. This also guards
 # against aliases and functions.
@@ -1046,7 +1095,7 @@ get_palette() {
         palette="$palette$e"
     }
 
-    # Print the palette.
+    # Print the palette with a new-line before and afterwards but no seperator.
     log "$palette" " " >&6
 }
 
