@@ -1095,7 +1095,7 @@ get_palette() {
         palette="$palette$e"
     }
 
-    # Print the palette with a new-line before and afterwards but no seperator.
+    # Print the palette.
     log "$palette" " " >&6
 }
 
