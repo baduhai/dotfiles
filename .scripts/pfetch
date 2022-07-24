@@ -1054,7 +1054,6 @@ get_wm() {
     log wm "$wm" >&6
 }
 
-
 get_de() {
     # This only supports Xorg related desktop environments though
     # this is fine as knowing the desktop environment on Windows,
