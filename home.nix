@@ -18,7 +18,7 @@
         executable = true;
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.scripts/pfetch";
-          sha256 = "Z7f/W6ayCSAhUswOG8SzBZZjeNX1vh4G4ZBRuSU5sFo=";
+          sha256 = "XnCntD8UW49rZM4+NOXz8NMtUMCSfJkMvMj3Q8gvaKk=";
         };
       };
       ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl { # MangoHud config.
@@ -45,7 +45,7 @@
   # GTK configuration.
   gtk = {
     enable = true;
-    font = { name = "Noto Sans"; size = 10; };
+    font = { name = "Inter"; size = 10; };
     theme = { package = pkgs.breeze-gtk; name = "Breeze"; };
     iconTheme = { package = pkgs.breeze-icons; name = "Breeze"; };
   };
@@ -99,7 +99,6 @@
          set -g theme_color_scheme dark
          set -g theme_nerd_fonts yes
          set -g theme_display_git_default_branch yes
-         set -g -x PF_INFO ascii os kernel uptime pkgs memory shell palette
          set -g -x FONTCONFIG_FILE ${pkgs.fontconfig.out}/etc/fonts/fonts.conf
       '';
       plugins  = [
@@ -149,6 +148,12 @@
         confirm_os_window_close = "-2";
 
       };
+    };
+    # tmux fonconfiguration.
+    tmux = {
+      enable = true;
+      clock24 = true;
+      extraConfig = "set -g mouse on";
     };
     # Git configuration.
     git = {
