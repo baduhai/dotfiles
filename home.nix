@@ -18,7 +18,7 @@
         executable = true;
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.scripts/pfetch";
-          sha256 = "XnCntD8UW49rZM4+NOXz8NMtUMCSfJkMvMj3Q8gvaKk=";
+          sha256 = "taTut791iDEe59kgWaFeS6I+B8b0F69/7KomCFGnocs=";
         };
       };
       ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl { # MangoHud config.
@@ -83,6 +83,7 @@
         g = "git";
         nano = "micro";
         wget = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
+        ssh = "kitty +kitten ssh";
       };
       functions = {
         fish_greeting = ''
@@ -90,7 +91,7 @@
           eval $HOME/.scripts/pfetch
         '';
         pacin = "nix-env -iA nixos.$argv";
-        pacre = "nix-env -e $argv";
+        pacre = "nix-env -e $argv\; nix-collect-garbage";
       };
       shellInit = ''
          set -g theme_date_format "+%H:%M"
