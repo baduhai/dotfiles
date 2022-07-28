@@ -5,7 +5,6 @@
     username = "user";
     homeDirectory = "/home/user";
     stateVersion = "22.05";
-    };
     # Configuring arbitrary files.
     file = {
       "/.scripts/pfetch" = { # pfetch script.
@@ -88,6 +87,6 @@
       diff-so-fancy.enable = true;
       userName = "William";
       userEmail = "williamhai@hotmail.com";
-    };
+    };  
   };
 }
