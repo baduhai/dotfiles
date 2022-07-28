@@ -17,20 +17,20 @@
       "/.scripts/pfetch" = { # pfetch script.
         executable = true;
         source = pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.scripts/pfetch";
+          url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/scripts/pfetch";
           sha256 = "taTut791iDEe59kgWaFeS6I+B8b0F69/7KomCFGnocs=";
         };
       };
       ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl { # MangoHud config.
-        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/MangoHud/MangoHud.conf";
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/MangoHud/MangoHud.conf";
         sha256 = "VZoyVelhNy+BZ0Ep7qWmMwuLZu2pTu/MZlIt8clS3zo=";
       };
       ".config/kitty/search.py".source = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/kitty/search.py";
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/kitty/search.py";
         sha256 = "mi5GB8CmWafAdp3GYnsQM4VHpXhuaVYX7YDT+9426Jc=";
       };
       ".config/kitty/scroll_mark.py".source = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/.config/kitty/scroll_mark.py";
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/kitty/scroll_mark.py";
         sha256 = "Abif6LIOCiXyDdQMZ4pQnLK++It0VYIM+WE7Oydwkfo=";
       };
       # Autosart applications.
