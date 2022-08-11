@@ -51,7 +51,13 @@
   };
 
   # User services configuration.
-  services.kdeconnect.enable = true;
+  services = {
+    kdeconnect.enable = true;
+    home-manager.autoUpgrade = {
+      enable = true;
+      frequency = "*-*-* 20:00:00";
+    };
+  };
 
   # xdg spec.
   xdg = {
@@ -122,6 +128,12 @@
           };
         }
       ];
+    };
+    # fzf configuration
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
     };
     # Kitty terminal emulator configuration.
     kitty = {
