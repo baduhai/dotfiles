@@ -21,7 +21,7 @@
         executable = true;
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/scripts/pfetch";
-          sha256 = "taTut791iDEe59kgWaFeS6I+B8b0F69/7KomCFGnocs=";
+          sha256 = "UEfTG1XCuN2GlpPz1gdQ5mxgutlX2XL58rGOqtaUgV4=";
         };
       };
       ".local/share/color-schemes/BreezeDarkNeutral.colors".source = pkgs.fetchurl {
