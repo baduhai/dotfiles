@@ -100,20 +100,21 @@
       };
       functions = {
         fish_greeting = ''
-          set -x PF_INFO ascii title os kernel uptime pkgs memory palette
+          set -x PF_INFO ascii title os kernel uptime wm memory palette
           eval $HOME/.scripts/pfetch
         '';
         pacin = "nix-env -iA nixos.$argv";
         pacre = "nix-env -e $argv\; nix-collect-garbage";
       };
       shellInit = ''
-         set -g theme_date_format "+%H:%M"
-         set -g theme_date_timezone Europe/Berlin
-         set -g theme_avoid_ambiguous_glyphs yes
-         set -g theme_color_scheme dark
-         set -g theme_nerd_fonts yes
-         set -g theme_display_git_default_branch yes
-         set -g -x FONTCONFIG_FILE ${pkgs.fontconfig.out}/etc/fonts/fonts.conf
+        set -g PF_INFO ascii title os kernel uptime wm memory palette
+        set -g theme_date_format "+%H:%M"
+        set -g theme_date_timezone Europe/Berlin
+        set -g theme_avoid_ambiguous_glyphs yes
+        set -g theme_color_scheme dark
+        set -g theme_nerd_fonts yes
+        set -g theme_display_git_default_branch yes
+        set -g -x FONTCONFIG_FILE ${pkgs.fontconfig.out}/etc/fonts/fonts.conf
       '';
       plugins  = [
         {
@@ -159,15 +160,15 @@
       settings = {
         tab_bar_edge = "top";
         tab_switch_strategy = "left";
-        tab_bar_min_tabs = 1;
-        tab_bar_style = "powerline";
-        tab_powerline_style = "slanted";
-        tab_bar_background = "#3b3b3b";
-        tab_bar_margin_color = "#3b3b3b";
-        tab_title_template = "{index}: {f'{title[:6]}…{title[-6:]}' if title.rindex(title[-1]) + 1 > 13 else title}";
+        tab_bar_margin_width = 2;
+        tab_bar_margin_height = "6 4";
+        tab_bar_style = "fade";
+        tab_fade = 0;
+        tab_title_template = "{fmt.bg._202020}{fmt.fg._303030}{fmt.fg.default}{fmt.bg._303030}{fmt.fg._c6c6c6} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._303030}{fmt.fg.default}";
+        active_tab_title_template = "{fmt.bg._202020}{fmt.fg._7e8d50}{fmt.fg.default}{fmt.bg._7e8d50}{fmt.fg._202020} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._7e8d50}{fmt.fg.default}";
         remember_window_size = "no";
         initial_window_width = "120c";
-        initial_window_height = "42c";
+        initial_window_height = "36c";
         confirm_os_window_close = "-2";
 
       };
