@@ -160,6 +160,7 @@
       settings = {
         tab_bar_edge = "top";
         tab_switch_strategy = "left";
+        tab_bar_min_tabs = 1;
         tab_bar_margin_width = 2;
         tab_bar_margin_height = "6 4";
         tab_bar_style = "fade";
