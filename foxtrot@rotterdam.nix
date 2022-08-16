@@ -12,6 +12,9 @@
       name = "breeze_cursors";
       package = pkgs.breeze-icons;
     };
+    sessionVariables = {
+      EDITOR = "micro";
+    };
     # Configuring arbitrary files.
     file = {
       "/.scripts/pfetch" = { # pfetch script.
@@ -21,7 +24,11 @@
           sha256 = "taTut791iDEe59kgWaFeS6I+B8b0F69/7KomCFGnocs=";
         };
       };
-      ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl { # MangoHud config.
+      ".local/share/color-schemes/BreezeDarkNeutral.colors".source = pkgs.fetchurl {
+        url = "https://raw.githubusercontent.com/hellokartikey/breeze-dark-neutral/main/BreezeDarkNeutral.colors";
+        sha256 = "OSnUslO7fxBZETCGcPtgtX3SiKaq3sz0/K70wDIj90A=";
+      };
+      ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/MangoHud/MangoHud.conf";
         sha256 = "VZoyVelhNy+BZ0Ep7qWmMwuLZu2pTu/MZlIt8clS3zo=";
       };
@@ -114,8 +121,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "oh-my-fish";
             repo = "theme-bobthefish";
-            rev = "14a6f2b317661e959e13a23870cf89274f867f12";
-            sha256 = "kl6XR6IFk5J5Bw7/0/wER4+TnQfC18GKxYbt9C+YHJ0=";
+            rev = "2dcfcab653ae69ae95ab57217fe64c97ae05d8de";
+            sha256 = "jBbm0wTNZ7jSoGFxRkTz96QHpc5ViAw9RGsRBkCQEIU=";
           };
         }
         {
@@ -127,13 +134,16 @@
             sha256 = "A8ydBX4LORk+nutjHurqNNWFmW6LIiBPQcxS3x4nbeQ=";
           };
         }
+        {
+          name = "fzf.fish";
+          src = pkgs.fetchFromGitHub {
+            owner = "PatrickF1";
+            repo = "fzf.fish";
+            rev = "v9.2";
+            sha256 = "XmRGe39O3xXmTvfawwT2mCwLIyXOlQm7f40mH5tzz+s=";
+          };
+        }
       ];
-    };
-    # fzf configuration
-    fzf = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
     };
     # Kitty terminal emulator configuration.
     kitty = {
