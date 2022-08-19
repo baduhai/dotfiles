@@ -5,31 +5,23 @@
     username = "user";
     homeDirectory = "/home/user";
     stateVersion = "22.05";
-    # Configuring arbitrary files.
     file = {
-      "/.scripts/pfetch" = { # pfetch script.
-        executable = true;
-        source = pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/scripts/pfetch";
-          sha256 = "taTut791iDEe59kgWaFeS6I+B8b0F69/7KomCFGnocs=";
-        };
+      executable = true;
+      source = pkgs.fetchurl {
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/scripts/pfetch";
+        sha256 = "taTut791iDEe59kgWaFeS6I+B8b0F69/7KomCFGnocs=";
       };
     };
   };
 
-  # Allow fonts installed by home-manager to be used elsewhere
   fonts.fontconfig.enable = true;
 
-  # Configuration of programs.
   programs = {
-    # Allow home-manager to manage itself.
     home-manager.enable = true;
-    # Allow bash to be managed by home-manager.
     bash = {
       enable = true;
       historyFile = "~/.cache/bash_history";
     };
-    # Fish configuration.
     fish = {
       enable = true;
       shellAliases = {
@@ -75,13 +67,11 @@
         }
       ];
     };
-    # tmux fonconfiguration.
     tmux = {
       enable = true;
       clock24 = true;
       extraConfig = "set -g mouse on";
     };
-    # Git configuration.
     git = {
       enable = true;
       diff-so-fancy.enable = true;

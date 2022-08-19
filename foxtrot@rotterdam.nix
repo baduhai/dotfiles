@@ -5,7 +5,7 @@
     username = "foxtrot";
     homeDirectory = "/home/foxtrot";
     stateVersion = "22.05";
-    pointerCursor = { # Good god, cursor theming is a bitch.
+    pointerCursor = {
       size = 24;
       gtk.enable = true;
       x11.enable = true;
@@ -15,9 +15,8 @@
     sessionVariables = {
       EDITOR = "micro";
     };
-    # Configuring arbitrary files.
     file = {
-      "/.scripts/pfetch" = { # pfetch script.
+      "/.scripts/pfetch" = {
         executable = true;
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/scripts/pfetch";
@@ -40,16 +39,13 @@
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/kitty/scroll_mark.py";
         sha256 = "Abif6LIOCiXyDdQMZ4pQnLK++It0VYIM+WE7Oydwkfo=";
       };
-      # Autosart applications.
-      ".config/autostart/org.kde.yakuake.desktop".source = "/var/run/current-system/sw/share/applications/org.kde.yakuake.desktop";
-      ".config/autostart/megasync.desktop".source = "/var/run/current-system/sw/share/applications/megasync.desktop";
+      ".config/autostart/org.kde.yakuake.desktop".source = config.lib.file.mkOutOfStoreSymlink "/var/run/current-system/sw/share/applications/org.kde.yakuake.desktop";
+      ".config/autostart/megasync.desktop".source = config.lib.file.mkOutOfStoreSymlink "/var/run/current-system/sw/share/applications/megasync.desktop";
     };
   };
 
-  # Allow fonts installed by home-manager to be used elsewhere
   fonts.fontconfig.enable = true;
 
-  # GTK configuration.
   gtk = {
     enable = true;
     font = { name = "Inter"; size = 10; };
@@ -57,8 +53,8 @@
     iconTheme = { package = pkgs.breeze-icons; name = "Breeze"; };
   };
 
-  # User services configuration.
   services = {
+    pass-secret-service.enable = true;
     kdeconnect.enable = true;
     home-manager.autoUpgrade = {
       enable = true;
@@ -66,11 +62,10 @@
     };
   };
 
-  # xdg spec.
   xdg = {
     enable = true;
     desktopEntries = {
-      steamGamepadUi = { # Menu entry for steam gamepadui.
+      steamGamepadUi = {
          terminal = false;
         icon = "steam_deck";
         exec = "steam -gamepadui";
@@ -80,16 +75,13 @@
     };
   };
 
-  # Configuration of programs.
   programs = {
-    # Allow home-manager to manage itself.
     home-manager.enable = true;
-    # Allow bash to be managed by home-manager.
+    password-store.enable = true;
     bash = {
       enable = true;
       historyFile = "~/.cache/bash_history";
     };
-    # Fish configuration.
     fish = {
       enable = true;
       shellAliases = {
@@ -146,7 +138,6 @@
         }
       ];
     };
-    # Kitty terminal emulator configuration.
     kitty = {
       enable = true;
       theme = "Afterglow";
@@ -158,36 +149,35 @@
         "kitty_mod+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
       };
       settings = {
-        tab_bar_edge = "top";
+        shell = "fish";
+        cursor_shape = "block";
         tab_switch_strategy = "left";
         tab_bar_min_tabs = 1;
         tab_bar_margin_width = 2;
-        tab_bar_margin_height = "6 4";
+        tab_bar_margin_height = "3 3";
         tab_bar_style = "fade";
         tab_fade = 0;
-        tab_title_template = "{fmt.bg._202020}{fmt.fg._303030}{fmt.fg.default}{fmt.bg._303030}{fmt.fg._c6c6c6} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._303030}{fmt.fg.default}";
-        active_tab_title_template = "{fmt.bg._202020}{fmt.fg._7e8d50}{fmt.fg.default}{fmt.bg._7e8d50}{fmt.fg._202020} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._7e8d50}{fmt.fg.default}";
-        remember_window_size = "no";
+        tab_bar_background = "#3b3b3b";
+        tab_bar_margin_color = "#3b3b3b";
+        tab_title_template = "{fmt.bg._3b3b3b}{fmt.fg._202020}{fmt.fg.default}{fmt.bg._202020}{fmt.fg._c6c6c6} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._202020}{fmt.fg.default}";
+        active_tab_title_template = "{fmt.bg._3b3b3b}{fmt.fg._fcfcfc}{fmt.fg.default}{fmt.bg._fcfcfc}{fmt.fg._3b3b3b} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._fcfcfc}{fmt.fg.default}";
         initial_window_width = "120c";
         initial_window_height = "36c";
+        remember_window_size = "no";
         confirm_os_window_close = "-2";
-
       };
     };
-    # tmux fonconfiguration.
     tmux = {
       enable = true;
       clock24 = true;
       extraConfig = "set -g mouse on";
     };
-    # Git configuration.
     git = {
       enable = true;
       diff-so-fancy.enable = true;
       userName = "William";
       userEmail = "williamhai@hotmail.com";
     };
-    # Mangohud configuration.
     mangohud = {
       enable            = true;
       enableSessionWide = true;
