@@ -16,7 +16,7 @@
       EDITOR = "micro";
     };
     file = {
-      "/.scripts/pfetch" = {
+      ".scripts/pfetch" = {
         executable = true;
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/scripts/pfetch";
@@ -54,7 +54,6 @@
   };
 
   services = {
-    pass-secret-service.enable = true;
     kdeconnect.enable = true;
     home-manager.autoUpgrade = {
       enable = true;
@@ -82,10 +81,20 @@
       enable = true;
       historyFile = "~/.cache/bash_history";
     };
+    micro = {
+      enable = true;
+      settings = {
+        clipboard = "terminal";
+        mkparents = true;
+        scrollbar = true;
+        tabstospaces = true;
+        tabsize = 2;
+      };
+    };
     fish = {
       enable = true;
       shellAliases = {
-        g = "git";
+        d = "kitty +kitten diff";
         nano = "micro";
         wget = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
         ssh = "kitty +kitten ssh";
@@ -149,22 +158,22 @@
         "kitty_mod+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
       };
       settings = {
-        shell = "fish";
+        confirm_os_window_close = "-2";
         cursor_shape = "block";
-        tab_switch_strategy = "left";
-        tab_bar_min_tabs = 1;
-        tab_bar_margin_width = 2;
-        tab_bar_margin_height = "3 3";
-        tab_bar_style = "fade";
-        tab_fade = 0;
+        initial_window_height = "36c";
+        initial_window_width = "120c";
+        remember_window_size = "no";
         tab_bar_background = "#3b3b3b";
         tab_bar_margin_color = "#3b3b3b";
+        tab_bar_margin_height = "3 3";
+        tab_bar_margin_width = 2;
+        tab_bar_min_tabs = 1;
+        tab_bar_style = "fade";
+        tab_fade = 0;
+        tab_switch_strategy = "left";
         tab_title_template = "{fmt.bg._3b3b3b}{fmt.fg._202020}{fmt.fg.default}{fmt.bg._202020}{fmt.fg._c6c6c6} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._202020}{fmt.fg.default}";
         active_tab_title_template = "{fmt.bg._3b3b3b}{fmt.fg._fcfcfc}{fmt.fg.default}{fmt.bg._fcfcfc}{fmt.fg._3b3b3b} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._fcfcfc}{fmt.fg.default}";
-        initial_window_width = "120c";
-        initial_window_height = "36c";
-        remember_window_size = "no";
-        confirm_os_window_close = "-2";
+
       };
     };
     tmux = {

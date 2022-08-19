@@ -23,6 +23,10 @@
           sha256 = "UEfTG1XCuN2GlpPz1gdQ5mxgutlX2XL58rGOqtaUgV4=";
         };
       };
+      ".local/share/color-schemes/BreezeDarkNeutral.colors".source = pkgs.fetchurl {
+        url = "https://raw.githubusercontent.com/hellokartikey/breeze-dark-neutral/main/BreezeDarkNeutral.colors";
+        sha256 = "OSnUslO7fxBZETCGcPtgtX3SiKaq3sz0/K70wDIj90A=";
+      };
       ".config/kitty/search.py".source = pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/kitty/search.py";
         sha256 = "mi5GB8CmWafAdp3GYnsQM4VHpXhuaVYX7YDT+9426Jc=";
@@ -31,6 +35,7 @@
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/kitty/scroll_mark.py";
         sha256 = "Abif6LIOCiXyDdQMZ4pQnLK++It0VYIM+WE7Oydwkfo=";
       };
+      ".config/autostart/org.keepassxc.KeePassXC.desktop".source = config.lib.file.mkOutOfStoreSymlink "/var/run/current-system/sw/share/applications/org.keepassxc.KeePassXC.desktop";
     };
   };
 
@@ -70,6 +75,7 @@
     fish = {
       enable = true;
       shellAliases = {
+        d = "kitty +kitten diff";
         nano = "micro";
         wget = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
         ssh = "kitty +kitten ssh";
@@ -138,7 +144,8 @@
       };
       settings = {
         confirm_os_window_close = "-2";
-        initial_window_height = "600";
+        cursor_shape = "block";
+        initial_window_height = "36c";
         initial_window_width = "120c";
         remember_window_size = "no";
         tab_bar_background = "#3b3b3b";
@@ -161,8 +168,8 @@
     git = {
       enable = true;
       diff-so-fancy.enable = true;
-      userEmail = "william.hai@credativ.de";
       userName = "William";
+      userEmail = "william.hai@credativ.de";
     };
   };
 }
