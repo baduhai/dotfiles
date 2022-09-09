@@ -12,10 +12,14 @@
       name = "breeze_cursors";
       package = pkgs.breeze-icons;
     };
+    packages = with pkgs; [
+      syncthingtray
+    ];
     sessionVariables = {
       EDITOR = "micro";
     };
     file = {
+      # Dotfiles that can't be managed via home-manager
       ".scripts/pfetch" = {
         executable = true;
         source = pkgs.fetchurl {
@@ -24,8 +28,8 @@
         };
       };
       ".local/share/color-schemes/BreezeDarkNeutral.colors".source = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/hellokartikey/breeze-dark-neutral/main/BreezeDarkNeutral.colors";
-        sha256 = "OSnUslO7fxBZETCGcPtgtX3SiKaq3sz0/K70wDIj90A=";
+        url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/color-schemes/BreezeDarkNeutral.colors";
+        sha256 = "Fw5knhpV47HlgYvbHFzfi6M6Tk2DTlAuFUYc2WDDBc8=";
       };
       ".config/MangoHud/MangoHud.conf".source = pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/MangoHud/MangoHud.conf";
@@ -39,12 +43,17 @@
         url = "https://raw.githubusercontent.com/baduhai/dotfiles/master/kitty/scroll_mark.py";
         sha256 = "Abif6LIOCiXyDdQMZ4pQnLK++It0VYIM+WE7Oydwkfo=";
       };
+      # Autostart programs
       ".config/autostart/org.kde.yakuake.desktop".source = config.lib.file.mkOutOfStoreSymlink "/var/run/current-system/sw/share/applications/org.kde.yakuake.desktop";
       ".config/autostart/megasync.desktop".source = config.lib.file.mkOutOfStoreSymlink "/var/run/current-system/sw/share/applications/megasync.desktop";
+      ".config/autostart/koi.desktop".source = config.lib.file.mkOutOfStoreSymlink "/var/run/current-system/sw/share/applications/koi.desktop";
+      # Fix flatpak fonts, themes, icons and cursor
+      ".icons/breeze_cursors".source = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/icons/breeze_cursors";
+      ".local/share/flatpak/overrides/global".text = "[Context]\nfilesystems=/run/current-system/sw/share/X11/fonts:ro;~/.local/share/color-schemes:ro;xdg-config/gtk-3.0:ro;/nix/store:ro;~/.icons:ro";
     };
   };
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = true; # Allow fonts installed by home-manager to be available session wide
 
   gtk = {
     enable = true;
@@ -55,7 +64,14 @@
 
   services = {
     kdeconnect.enable = true;
-    home-manager.autoUpgrade = {
+    syncthing = {
+      enable = true;
+      tray = {
+        enable = true;
+        package = pkgs.writeShellScriptBin "syncthingtray" "exec ${pkgs.syncthingtray}/bin/syncthingtray --wait" // { pname = "syncthingtray"; }; # Override synctray so it waits for a system tray
+      };
+    };
+    home-manager.autoUpgrade = { # Auto upgrade home-manager, unsure if this works or not
       enable = true;
       frequency = "*-*-* 20:00:00";
     };
@@ -64,7 +80,7 @@
   xdg = {
     enable = true;
     desktopEntries = {
-      steamGamepadUi = {
+      steamGamepadUi = { # Menu entry for steam gamepad ui
          terminal = false;
         icon = "steam_deck";
         exec = "steam -gamepadui";
@@ -76,7 +92,10 @@
 
   programs = {
     home-manager.enable = true;
-    password-store.enable = true;
+    password-store = {
+      enable = true;
+      package = pkgs.pass-wayland
+    };
     bash = {
       enable = true;
       historyFile = "~/.cache/bash_history";
@@ -93,6 +112,8 @@
     };
     fish = {
       enable = true;
+      interactiveShellInit = "any-nix-shell fish --info-right | source";
+      loginShellInit = "any-nix-shell fish --info-right | source";
       shellAliases = {
         d = "kitty +kitten diff";
         nano = "micro";
@@ -104,8 +125,12 @@
           set -x PF_INFO ascii title os kernel uptime wm memory palette
           eval $HOME/.scripts/pfetch
         '';
+        tsh = "ssh -o RequestTTY=yes $argv tmux -u -CC new -A -s tmux-main";
         pacin = "nix-env -iA nixos.$argv";
-        pacre = "nix-env -e $argv\; nix-collect-garbage";
+        pacre = "nix-env -e $argv";
+        trizen = "nix search nixpkgs $argv";
+        rebuild = "sudo nixos-rebuild switch";
+        upgrade = "sudo nixos-rebuild switch --upgrade";
       };
       shellInit = ''
         set -g PF_INFO ascii title os kernel uptime wm memory palette
@@ -158,9 +183,10 @@
         "kitty_mod+f" = "launch --location=hsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
       };
       settings = {
+        clipboard_control = "write-clipboard read-clipboard write-primary read-primary";
         confirm_os_window_close = "-2";
         cursor_shape = "block";
-        initial_window_height = "36c";
+        initial_window_height = "570";
         initial_window_width = "120c";
         remember_window_size = "no";
         tab_bar_background = "#3b3b3b";
@@ -173,7 +199,6 @@
         tab_switch_strategy = "left";
         tab_title_template = "{fmt.bg._3b3b3b}{fmt.fg._202020}{fmt.fg.default}{fmt.bg._202020}{fmt.fg._c6c6c6} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._202020}{fmt.fg.default}";
         active_tab_title_template = "{fmt.bg._3b3b3b}{fmt.fg._fcfcfc}{fmt.fg.default}{fmt.bg._fcfcfc}{fmt.fg._3b3b3b} {title} {fmt.fg.default}{fmt.bg.default}{fmt.fg._fcfcfc}{fmt.fg.default}";
-
       };
     };
     tmux = {
