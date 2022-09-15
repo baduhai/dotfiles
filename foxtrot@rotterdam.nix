@@ -81,7 +81,7 @@
     enable = true;
     desktopEntries = {
       steamGamepadUi = { # Menu entry for steam gamepad ui
-         terminal = false;
+        terminal = false;
         icon = "steam_deck";
         exec = "steam -gamepadui";
         name = "Steam (Gamepad UI)";
@@ -94,7 +94,7 @@
     home-manager.enable = true;
     password-store = {
       enable = true;
-      package = pkgs.pass-wayland
+      package = pkgs.pass-wayland;
     };
     bash = {
       enable = true;
@@ -171,6 +171,15 @@
           };
         }
       ];
+    };
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "gruvbox_dark.theme";
+        theme_background = false;
+        proc_sorting = "cpu direct";
+        update_ms = 500;
+      };
     };
     kitty = {
       enable = true;
