@@ -82,7 +82,7 @@
           },
           "style": "diamond",
           "template": " {{ if gt .Code 0 }}\uf525{{ else }}\uf469{{ end }}",
-          "trailing_diamond": "\ue0b4",
+          "trailing_diamond": " \ue0b4",
           "type": "exit"
         }
       ],
