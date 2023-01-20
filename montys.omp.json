@@ -76,12 +76,12 @@
             "{{ if gt .Code 0 }}red{{ end }}"
           ],
           "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0 ",
+          "powerline_symbol": "\ue0b0",
           "properties": {
             "always_enabled": true
           },
           "style": "diamond",
-          "template": " {{ if gt .Code 0 }}\uf525{{ else }}\uf469{{ end }}",
+          "template": "  {{ if gt .Code 0 }}\uf525{{ else }}\uf469{{ end }}",
           "trailing_diamond": "\ue0b4",
           "type": "exit"
         }
