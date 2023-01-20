@@ -22,7 +22,7 @@
             "home_icon": "\uf7db",
             "style": "full"
           },
-          "style": "powerline",
+          "style": "diamond",
           "template": " <#000>\uf07b \uf553</> {{ .Path }} ",
           "type": "path"
         },
@@ -36,7 +36,7 @@
             "fetch_status": false,
             "fetch_upstream_icon": true
           },
-          "style": "powerline",
+          "style": "diamond",
           "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) ",
           "type": "git"
         },
@@ -44,7 +44,7 @@
           "background": "#76b367",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
-          "style": "powerline",
+          "style": "diamond",
           "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
           "type": "node"
         },
@@ -55,7 +55,7 @@
           "properties": {
             "always_enabled": true
           },
-          "style": "powerline",
+          "style": "diamond",
           "template": " \ufbab {{ .FormattedMs }} ",
           "type": "executiontime"
         },
@@ -66,7 +66,7 @@
           "properties": {
             "time_format": "15:04"
           },
-          "style": "powerline",
+          "style": "diamond",
           "template": " \uf017 {{ .CurrentDate | date .Format }} ",
           "type": "time"
         },
