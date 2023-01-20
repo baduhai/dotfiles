@@ -12,7 +12,7 @@ return {
   }),
   initial_cols = 108,
   initial_rows = 32,
-  use_fancy_tab_bar = false,
+  window_background_opacity = 0.6,
   tab_bar_style = {
     active_tab_left = wezterm.format({
       { Background = { Color = "#0b0022" } },
