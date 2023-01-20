@@ -11,7 +11,6 @@
           "style": "diamond",
           "template": "\uf8b1 {{ .HostName }} ",
           "type": "os"
-          ""
         },
         {
           "background": "#DA627D",
