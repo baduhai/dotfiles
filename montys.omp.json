@@ -9,8 +9,9 @@
           "foreground": "#00c983",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
-          "template": "{{ .Icon }} {{ .HostName }} ",
+          "template": "\uf8b1 {{ .HostName }} ",
           "type": "os"
+          ""
         },
         {
           "background": "#DA627D",
