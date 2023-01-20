@@ -9,6 +9,7 @@
           "foreground": "#00c983",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": "{{ .Icon }} {{ .HostName }} ",
           "type": "os"
         },
@@ -23,6 +24,7 @@
             "style": "full"
           },
           "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": " <#000>\uf07b \uf553</> {{ .Path }} ",
           "type": "path"
         },
@@ -37,6 +39,7 @@
             "fetch_upstream_icon": true
           },
           "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) ",
           "type": "git"
         },
@@ -45,6 +48,7 @@
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
           "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
           "type": "node"
         },
@@ -56,6 +60,7 @@
             "always_enabled": true
           },
           "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": " \ufbab {{ .FormattedMs }} ",
           "type": "executiontime"
         },
@@ -67,6 +72,7 @@
             "time_format": "15:04"
           },
           "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": " \uf017 {{ .CurrentDate | date .Format }} ",
           "type": "time"
         },
