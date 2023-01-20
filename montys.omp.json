@@ -9,7 +9,7 @@
           "foreground": "#00c983",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
-          "template": "\uf8b1 {{ .HostName }} ",
+          "template": "{{ .Icon }} {{ .HostName }} ",
           "type": "os"
         },
         {
