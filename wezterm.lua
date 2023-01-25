@@ -11,7 +11,7 @@ local HOVER_TAB_FG = "Black"
 wezterm.add_to_config_reload_watch_list(wezterm.config_dir)
 return {
   font_size = 11,
-  color_scheme = 'Atelier Cave (base16)',
+  color_scheme = 'Kasugano (terminal.sexy)',
   hide_tab_bar_if_only_one_tab = true,
   font = wezterm.font_with_fallback ({
     "Hack Nerd Font",
