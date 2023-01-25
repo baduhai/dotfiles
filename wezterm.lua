@@ -20,4 +20,5 @@ return {
   initial_cols = 108,
   initial_rows = 32,
   enable_tab_bar = false,
+  enable_scroll_bar = true,
 }
