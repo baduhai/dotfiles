@@ -1,22 +1,16 @@
 local wezterm = require 'wezterm';
 
-
-
-local function compute_scheme()
-  local time = tonumber(os.date("%H"))
-  local just_dark = false
-  if time >= 18 or time < 7 or just_dark then
+function scheme_for_appearance(appearance)
+  if appearance:find "Dark" then
     return "Catppuccin Mocha"
   else
-    return "Catppuccin Latte"
+    return "Catppuccin Frappe"
   end
 end
 
-
-
 return {
   font_size = 11,
-  color_scheme = compute_scheme(),
+  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   hide_tab_bar_if_only_one_tab = true,
   font = wezterm.font_with_fallback ({
     "Hack Nerd Font",
