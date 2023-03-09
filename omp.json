@@ -19,12 +19,12 @@
           "properties": {
             "folder_icon": "\uea7c",
             "folder_separator_icon": " \ueab6 ",
-            "home_icon": "\uf7db",
+            "home_icon": "~",
             "style": "agnoster_short",
             "max_depth": 3
           },
           "style": "powerline",
-          "template": " \uf07b  \u279c {{ .Path }} ",
+          "template": " \uf07b {{ .Path }} ",
           "type": "path"
         },
         {
