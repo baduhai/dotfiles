@@ -24,7 +24,7 @@
             "max_depth": 3
           },
           "style": "powerline",
-          "template": " <#000>\uf07b \uf553</> {{ .Path }} ",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
