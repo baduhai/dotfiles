@@ -24,7 +24,7 @@
             "max_depth": 3
           },
           "style": "powerline",
-          "template": " {{ .Path }} ",
+          "template": " \uea7c {{ .Path }} ",
           "type": "path"
         },
         {

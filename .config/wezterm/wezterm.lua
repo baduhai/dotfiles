@@ -20,7 +20,4 @@ return {
   initial_rows = 32,
   enable_tab_bar = false,
   enable_scroll_bar = true,
-  keys = {
-    { key = 'q', mods = 'CTRL', action = wezterm.action.QuitApplication },
-  },
 }
