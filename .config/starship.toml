@@ -80,7 +80,7 @@ format = '[[ $duration  ](fg:#a0a9cb bg:#1d2230)]($style)'
 [hostname]
 ssh_only = false
 style = 'bg:#a3aed2 fg:#090c0c'
-ssh_symbol = ' '
+ssh_symbol = '  '
 format = '[[$ssh_symbol](fg:#e3e5e5 bg:#769ff0)[](bg:#769ff0 fg:#a3aed2)$hostname ]($style)'
 
 [character]
