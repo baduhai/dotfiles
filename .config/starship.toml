@@ -20,7 +20,7 @@ $cmd_duration\
 [](fg:#769ff0 bg:#394260)\
 $hostname\
 [▓▒░](#a3aed2)\
-\n[  ](#a3aed2)"""
+\n[  ](#769ff0)"""
 right_format = """
 $character"""
 
