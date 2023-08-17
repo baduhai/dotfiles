@@ -10,7 +10,7 @@ end
 
 return {
   font_size = 11,
-  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+  color_scheme = "Catpuccin Mocha",
   hide_tab_bar_if_only_one_tab = true,
   font = wezterm.font_with_fallback ({
     "Hack Nerd Font",
