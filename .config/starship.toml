@@ -1,26 +1,28 @@
+palette = "night"
 format = """
-[░▒▓](#a3aed2)\
+[░▒▓](text)\
 $os\
-[](bg:#769ff0 fg:#a3aed2)\
+[](fg:text bg:prim)\
 $directory\
-[](fg:#769ff0 bg:#394260)\
+[](fg:prim bg:seco)\
 $git_branch\
 $git_status\
-[](fg:#394260 bg:#212736)\
+[](fg:seco bg:tert)\
 $nix_shell\
 $rust\
-[](fg:#212736 bg:#1d2230)\
+[](fg:tert bg:quar)\
 $time\
-[](fg:#1d2230)\
+[](fg:quar)\
 $fill\
-[](fg:#1d2230)\
+
+[](fg:quar)\
 $cmd_duration\
-[](fg:#212736 bg:#1d2230)\
-[](fg:#394260 bg:#212736)\
-[](fg:#769ff0 bg:#394260)\
+[](fg:tert bg:quar)\
+[](fg:seco bg:tert)\
+[](fg:prim bg:seco)\
 $hostname\
-[▓▒░](#a3aed2)\
-\n[  ](#769ff0)"""
+[▓▒░](text)\
+\n[  ](seco)"""
 right_format = """
 $character"""
 
@@ -28,18 +30,18 @@ add_newline = false
 
 [os]
 disabled = false
-style = 'bg:#a3aed2 fg:#090c0c'
+style = 'bg:text fg:bg'
 [os.symbols]
 NixOS = '  '
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
+style = "fg:bg bg:prim"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "󰇘 "
 
 [directory.substitutions]
-"Documents" = " "
+"Documents" = " "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
@@ -47,44 +49,54 @@ truncation_symbol = "󰇘 "
 
 [git_branch]
 symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+style = "bg:seco"
+format = '[[ $symbol $branch ](fg:bg bg:seco)]($style)'
 
 [git_status]
-style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+style = "bg:seco"
+format = '[[($all_status$ahead_behind )](fg:bg bg:seco)]($style)'
 
 [nix_shell]
 symbol = '󱄅'
-style = "bg:#212736"
+style = "bg:tert"
 heuristic = true
-format = '[[ $symbol ](fg:#769ff0 bg:#212736)]($style)'
+format = '[[ $symbol ](fg:bg bg:tert)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+style = "bg:tert"
+format = '[[ $symbol ($version) ](fg:bg bg:tert)]($style)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:quar"
+format = '[[  $time ](fg:seco bg:quar)]($style)'
 
 [fill]
 symbol = ' '
 
 [cmd_duration]
 min_time = 0
-style = "bg:#1d2230"
-format = '[[ $duration  ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:quar"
+format = '[[ $duration  ](fg:seco bg:quar)]($style)'
 
 [hostname]
 ssh_only = false
-style = 'bg:#a3aed2 fg:#090c0c'
+style = 'fg:bg bg:text'
 ssh_symbol = '  '
-format = '[[$ssh_symbol](fg:#e3e5e5 bg:#769ff0)[](bg:#769ff0 fg:#a3aed2)$hostname ]($style)'
+format = '[[$ssh_symbol](fg:bg bg:prim)[](bg:prim fg:text)$hostname ]($style)'
 
 [character]
 success_symbol = '[󱐋](bold green) '
 error_symbol = '[✗](bold red) '
+
+[palettes.night]
+prim = "#a2b3e6"
+seco = "#738cd9"
+tert = "#4566cd"
+quar = "#0f2d8a"
+red = "#f38ba8"
+green = "#a6e3a1"
+text = "#d0d9f2"
+bg = "#1E1E2E"
